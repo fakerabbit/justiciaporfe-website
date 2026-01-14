@@ -1,7 +1,9 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { BookOpen, Mail, ArrowRight, CheckCircle, Heart, Users, BarChart3, Lightbulb, Scale, Link2, Home, Menu, X } from 'lucide-react';
+import { BookOpen, Mail, ArrowRight, CheckCircle, Users, BarChart3, Lightbulb, Scale, Link2, Home, Menu, X } from 'lucide-react';
+
+import StatsSection from './components/stats-section';
 
 // Import diagram components
 import ComparacionMaestra from './components/diagrams/visual-comparacion-maestra';
@@ -180,25 +182,6 @@ const JusticiaPorFeIntegrated = () => {
     }
   };
 
-  const AnimatedCounter = ({ end, duration = 2000, suffix = '' }) => {
-    const [count, setCount] = useState(0);
-
-    useEffect(() => {
-      let startTime;
-      const animate = (currentTime) => {
-        if (!startTime) startTime = currentTime;
-        const progress = Math.min((currentTime - startTime) / duration, 1);
-        setCount(Math.floor(progress * end));
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        }
-      };
-      requestAnimationFrame(animate);
-    }, [end, duration]);
-
-    return <span>{count}{suffix}</span>;
-  };
-
   // Navigation Component
   const Navigation = () => (
     <nav className="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm">
@@ -342,33 +325,7 @@ const JusticiaPorFeIntegrated = () => {
       </header>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="p-6 space-y-2 transform hover:scale-105 transition-all">
-              <BookOpen className="w-12 h-12 text-blue-600 mx-auto" />
-              <div className="text-4xl font-bold text-gray-800">
-                <AnimatedCounter end={6} />
-              </div>
-              <p className="text-gray-600">Diagramas Interactivos</p>
-            </div>
-            <div className="p-6 space-y-2 transform hover:scale-105 transition-all">
-              <Lightbulb className="w-12 h-12 text-blue-600 mx-auto" />
-              <div className="text-4xl font-bold text-gray-800">
-                <AnimatedCounter end={15} suffix="+" />
-              </div>
-              <p className="text-gray-600">Argumentos Bíblicos</p>
-            </div>
-            <div className="p-6 space-y-2 transform hover:scale-105 transition-all">
-              <Heart className="w-12 h-12 text-blue-600 mx-auto" />
-              <div className="text-4xl font-bold text-gray-800">
-                <AnimatedCounter end={100} suffix="%" />
-              </div>
-              <p className="text-gray-600">Basado en la Escritura</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <StatsSection />
 
       {/* Introduction Section */}
       <section className="py-16 bg-gradient-to-r from-slate-700 to-slate-900 text-white">
