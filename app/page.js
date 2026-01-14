@@ -3,9 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { BookOpen, Mail, ArrowRight, CheckCircle, Heart, Users, BarChart3, Lightbulb, Scale, Link2, Home, Menu, X } from 'lucide-react';
 
-// Note: In production, these would be separate imported components
-// For now, we'll create placeholder components that you'll replace with the actual diagram files
-
+// Import diagram components
 import ComparacionMaestra from './components/diagrams/visual-comparacion-maestra';
 import TresSimbolos from './components/diagrams/visual-tres-simbolos';
 import OrdenSantuario from './components/diagrams/visual-orden-santuario';
@@ -21,17 +19,6 @@ const JusticiaPorFeIntegrated = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
-      const currentProgress = (window.scrollY / totalScroll) * 100;
-      setScrollProgress(currentProgress);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   // Diagram data
   const diagrams = [
     {
@@ -46,8 +33,8 @@ const JusticiaPorFeIntegrated = () => {
     },
     {
       id: 'tres-simbolos',
-      title: 'Tres Símbolos del Pecado Como Estado',
-      description: 'Levadura, Lepra y Esclavitud revelan que el pecado es un estado heredado, no solo actos',
+      title: 'Tres Símbolos del Pecado Como Posición Legal',
+      description: 'Levadura, Lepra y Esclavitud revelan que el pecado es un estado heredado, no solo actos consumados',
       category: 'Símbolos Bíblicos',
       icon: <Lightbulb size={24} />,
       component: TresSimbolos,
@@ -95,6 +82,69 @@ const JusticiaPorFeIntegrated = () => {
       textColor: 'text-teal-600'
     }
   ];
+
+  // Read URL parameters on mount
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const page = params.get('page');
+    const diagram = params.get('diagram');
+    
+    if (page === 'diagram' && diagram) {
+      setCurrentPage('diagram');
+      setCurrentDiagram(diagram);
+    } else if (page) {
+      setCurrentPage(page);
+    }
+  }, []);
+
+  // Handle browser back/forward buttons
+  useEffect(() => {
+    const handlePopState = () => {
+      const params = new URLSearchParams(window.location.search);
+      const page = params.get('page') || 'home';
+      const diagram = params.get('diagram');
+      
+      setCurrentPage(page);
+      if (diagram) {
+        setCurrentDiagram(diagram);
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Navigation function that updates URL
+  const navigateToPage = (page, diagramId = null) => {
+    setCurrentPage(page);
+    if (diagramId) {
+      setCurrentDiagram(diagramId);
+    }
+    
+    // Update URL
+    let newUrl = window.location.pathname;
+    if (page === 'home') {
+      newUrl = window.location.pathname;
+    } else if (page === 'diagram' && diagramId) {
+      newUrl = `${window.location.pathname}?page=diagram&diagram=${diagramId}`;
+    } else {
+      newUrl = `${window.location.pathname}?page=${page}`;
+    }
+    
+    window.history.pushState({ page, diagram: diagramId }, '', newUrl);
+    window.scrollTo(0, 0);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const currentProgress = (window.scrollY / totalScroll) * 100;
+      setScrollProgress(currentProgress);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleSubscribe = async () => {
     if (!email) return;
@@ -155,10 +205,7 @@ const JusticiaPorFeIntegrated = () => {
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <button
-            onClick={() => {
-              setCurrentPage('home');
-              setCurrentDiagram(null);
-            }}
+            onClick={() => navigateToPage('home')}
             className="text-blue-600 font-bold text-xl hover:text-blue-700 flex items-center gap-2"
           >
             <Home size={24} />
@@ -168,19 +215,29 @@ const JusticiaPorFeIntegrated = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-6">
             <button
-              onClick={() => setCurrentPage('home')}
+              onClick={() => navigateToPage('home')}
               className="text-slate-600 hover:text-blue-600 font-semibold transition-colors"
             >
               Inicio
             </button>
             <button
-              onClick={() => document.getElementById('diagrams')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => {
+                navigateToPage('home');
+                setTimeout(() => {
+                  document.getElementById('diagrams')?.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              }}
               className="text-slate-600 hover:text-blue-600 font-semibold transition-colors"
             >
               Diagramas
             </button>
             <button
-              onClick={() => document.getElementById('subscribe')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => {
+                navigateToPage('home');
+                setTimeout(() => {
+                  document.getElementById('subscribe')?.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              }}
               className="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-all"
             >
               Suscribirse
@@ -201,7 +258,7 @@ const JusticiaPorFeIntegrated = () => {
           <div className="md:hidden mt-4 pb-4 space-y-3">
             <button
               onClick={() => {
-                setCurrentPage('home');
+                navigateToPage('home');
                 setMobileMenuOpen(false);
               }}
               className="block w-full text-left text-slate-600 hover:text-blue-600 font-semibold py-2"
@@ -210,8 +267,11 @@ const JusticiaPorFeIntegrated = () => {
             </button>
             <button
               onClick={() => {
-                document.getElementById('diagrams')?.scrollIntoView({ behavior: 'smooth' });
+                navigateToPage('home');
                 setMobileMenuOpen(false);
+                setTimeout(() => {
+                  document.getElementById('diagrams')?.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
               }}
               className="block w-full text-left text-slate-600 hover:text-blue-600 font-semibold py-2"
             >
@@ -219,8 +279,11 @@ const JusticiaPorFeIntegrated = () => {
             </button>
             <button
               onClick={() => {
-                document.getElementById('subscribe')?.scrollIntoView({ behavior: 'smooth' });
+                navigateToPage('home');
                 setMobileMenuOpen(false);
+                setTimeout(() => {
+                  document.getElementById('subscribe')?.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
               }}
               className="block w-full bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 text-center"
             >
@@ -339,11 +402,7 @@ const JusticiaPorFeIntegrated = () => {
             {diagrams.map((diagram) => (
               <div
                 key={diagram.id}
-                onClick={() => {
-                  setCurrentDiagram(diagram.id);
-                  setCurrentPage('diagram');
-                  window.scrollTo(0, 0);
-                }}
+                onClick={() => navigateToPage('diagram', diagram.id)}
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all cursor-pointer transform hover:-translate-y-2"
               >
                 <div className={`h-48 bg-gradient-to-br ${diagram.color} flex items-center justify-center`}>
@@ -424,7 +483,10 @@ const JusticiaPorFeIntegrated = () => {
   // Diagram Page
   const DiagramPage = () => {
     const diagram = diagrams.find(d => d.id === currentDiagram);
-    if (!diagram) return <HomePage />;
+    if (!diagram) {
+      navigateToPage('home');
+      return null;
+    }
 
     const DiagramComponent = diagram.component;
     const currentIndex = diagrams.findIndex(d => d.id === currentDiagram);
@@ -460,10 +522,7 @@ const JusticiaPorFeIntegrated = () => {
             <div className="grid md:grid-cols-2 gap-6">
               {prevDiagram && (
                 <button
-                  onClick={() => {
-                    setCurrentDiagram(prevDiagram.id);
-                    window.scrollTo(0, 0);
-                  }}
+                  onClick={() => navigateToPage('diagram', prevDiagram.id)}
                   className="bg-slate-50 hover:bg-slate-100 p-6 rounded-xl text-left transition-all border-2 border-slate-200 hover:border-blue-500"
                 >
                   <p className="text-sm text-slate-600 mb-2">← Anterior</p>
@@ -472,10 +531,7 @@ const JusticiaPorFeIntegrated = () => {
               )}
               {nextDiagram && (
                 <button
-                  onClick={() => {
-                    setCurrentDiagram(nextDiagram.id);
-                    window.scrollTo(0, 0);
-                  }}
+                  onClick={() => navigateToPage('diagram', nextDiagram.id)}
                   className="bg-slate-50 hover:bg-slate-100 p-6 rounded-xl text-left transition-all border-2 border-slate-200 hover:border-blue-500"
                 >
                   <p className="text-sm text-slate-600 mb-2">Siguiente →</p>
@@ -491,7 +547,7 @@ const JusticiaPorFeIntegrated = () => {
             <p className="mb-6">Suscríbete para recibir notificaciones de nuevos recursos</p>
             <button
               onClick={() => {
-                setCurrentPage('home');
+                navigateToPage('home');
                 setTimeout(() => {
                   document.getElementById('subscribe')?.scrollIntoView({ behavior: 'smooth' });
                 }, 100);
