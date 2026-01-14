@@ -6,12 +6,12 @@ import { BookOpen, Mail, ArrowRight, CheckCircle, Heart, Users, BarChart3, Light
 // Note: In production, these would be separate imported components
 // For now, we'll create placeholder components that you'll replace with the actual diagram files
 
-const ComparacionMaestra = () => <div className="p-8 bg-purple-50 rounded-xl"><p className="text-center text-purple-900 font-bold text-xl">Diagrama: Comparación Maestra TUG vs. Biblia</p><p className="text-center text-sm mt-2 text-slate-600">Componente desde: visual-comparacion-maestra.tsx</p></div>;
-const TresSimbolos = () => <div className="p-8 bg-blue-50 rounded-xl"><p className="text-center text-blue-900 font-bold text-xl">Diagrama: Tres Símbolos (Levadura, Lepra, Esclavitud)</p><p className="text-center text-sm mt-2 text-slate-600">Componente desde: visual-tres-simbolos.tsx</p></div>;
-const OrdenSantuario = () => <div className="p-8 bg-indigo-50 rounded-xl"><p className="text-center text-indigo-900 font-bold text-xl">Diagrama: Orden del Santuario (Incienso → Aceite)</p><p className="text-center text-sm mt-2 text-slate-600">Componente desde: visual-orden-santuario.tsx</p></div>;
-const Exodo21Argumento = () => <div className="p-8 bg-amber-50 rounded-xl"><p className="text-center text-amber-900 font-bold text-xl">Diagrama: Éxodo 21:4 - Herencia de Esclavitud</p><p className="text-center text-sm mt-2 text-slate-600">Componente desde: visual-exodo21-argumento.tsx</p></div>;
-const Romanos5Diagram = () => <div className="p-8 bg-green-50 rounded-xl"><p className="text-center text-green-900 font-bold text-xl">Diagrama: Romanos 5:12-19 - Dos Adanes</p><p className="text-center text-sm mt-2 text-slate-600">Componente desde: visual-romanos5-diagram.tsx</p></div>;
-const Corintios15Diagram = () => <div className="p-8 bg-teal-50 rounded-xl"><p className="text-center text-teal-900 font-bold text-xl">Diagrama: 1 Corintios 15:22 - En Adán vs. En Cristo</p><p className="text-center text-sm mt-2 text-slate-600">Componente desde: visual-corintios15-diagram.tsx</p></div>;
+import ComparacionMaestra from './components/diagrams/visual-comparacion-maestra';
+import TresSimbolos from './components/diagrams/visual-tres-simbolos';
+import OrdenSantuario from './components/diagrams/visual-orden-santuario';
+import Exodo21Argumento from './components/diagrams/visual-exodo21-argumento';
+import Romanos5Diagram from './components/diagrams/visual-romanos5-diagram';
+import Corintios15Diagram from './components/diagrams/visual-corintios15-diagram';
 
 const JusticiaPorFeIntegrated = () => {
   const [currentPage, setCurrentPage] = useState('home');
