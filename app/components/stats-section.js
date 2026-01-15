@@ -3,7 +3,7 @@ import { BookOpen, Heart, Lightbulb } from 'lucide-react';
 
 // Store animation state outside component to survive re-renders
 const animationState = {
-  counter7: { hasAnimated: false, currentValue: 0 },
+  counterDiagrams: { hasAnimated: false, currentValue: 0 },
   counter15: { hasAnimated: false, currentValue: 0 },
   counter100: { hasAnimated: false, currentValue: 0 }
 };
@@ -66,7 +66,36 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = '', counterId }) => {
   return <span ref={counterRef}>{count}{suffix}</span>;
 };
 
+// Import all your diagrams here - add new ones as you create them
+import VisualComparacionMaestra from './diagrams/visual-comparacion-maestra';
+import VisualTresSimbolos from './diagrams/visual-tres-simbolos';
+import VisualOrdenSantuario from './diagrams/visual-orden-santuario';
+import VisualExodo21Argumento from './diagrams/visual-exodo21-argumento';
+import VisualRomanos5Diagram from './diagrams/visual-romanos5-diagram';
+import VisualCorintios15Diagram from './diagrams/visual-corintios15-diagram';
+import VisualRomanos213 from './diagrams/visual-romanos213';
+import VisualTwoPerfections from './diagrams/visual-two-perfections';
+import VisualTelosTeleios from './diagrams/visual-telos-teleios';
+import VisualTeleiosComprehensive from './diagrams/visual-teleios-comprehensive';
+
+// Array of all diagram components
+const DIAGRAMS = [
+  VisualComparacionMaestra,
+  VisualTresSimbolos,
+  VisualOrdenSantuario,
+  VisualExodo21Argumento,
+  VisualRomanos5Diagram,
+  VisualCorintios15Diagram,
+  VisualRomanos213,
+  VisualTwoPerfections,
+  VisualTelosTeleios,
+  VisualTeleiosComprehensive,
+];
+
 const StatsSection = () => {
+  // Automatically get the count from the DIAGRAMS array
+  const diagramCount = DIAGRAMS.length;
+
   return (
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-6">
@@ -74,7 +103,7 @@ const StatsSection = () => {
           <div className="p-6 space-y-2 transform hover:scale-105 transition-all">
             <BookOpen className="w-12 h-12 text-blue-600 mx-auto" />
             <div className="text-4xl font-bold text-gray-800">
-              <AnimatedCounter end={7} counterId="counter7" />
+              <AnimatedCounter end={diagramCount} counterId="counterDiagrams" />
             </div>
             <p className="text-gray-600">Diagramas Interactivos</p>
           </div>

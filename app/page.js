@@ -13,6 +13,9 @@ import Exodo21Argumento from './components/diagrams/visual-exodo21-argumento';
 import Romanos5Diagram from './components/diagrams/visual-romanos5-diagram';
 import Corintios15Diagram from './components/diagrams/visual-corintios15-diagram';
 import Romanos213Contexto from './components/diagrams/visual-romanos213';
+import DosPerfecciones from './components/diagrams/visual-two-perfections';
+import TelosTeleios from './components/diagrams/visual-telos-teleios';
+import TeleiosComprehensive from './components/diagrams/visual-teleios-comprehensive';
 
 const JusticiaPorFeIntegrated = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -93,7 +96,37 @@ const JusticiaPorFeIntegrated = () => {
       component: Romanos213Contexto,
       color: 'from-purple-500 to-indigo-700',
       textColor: 'text-purple-600'
-    }
+    },
+    {
+    id: 'two-perfections',
+    title: 'Las Dos Perfecciones de Pablo',
+    description: 'Filipenses 3:12 vs 3:15 - Perfecto EN CRISTO (justificación) vs. Creciendo en madurez (santificación)',
+    category: 'Teología Paulina',
+    icon: <Scale size={24} />,
+    component: DosPerfecciones,
+    color: 'from-purple-500 to-indigo-700',
+    textColor: 'text-purple-600'
+  },
+  {
+    id: 'telos-teleios',
+    title: 'Τέλος y Τέλειος - Propósito y Cumplimiento',
+    description: 'El fundamento griego filosófico: Teleios significa cumplir tu propósito, no alcanzar impecabilidad',
+    category: 'Análisis Lingüístico',
+    icon: <BookOpen size={24} />,
+    component: TelosTeleios,
+    color: 'from-blue-500 to-cyan-700',
+    textColor: 'text-blue-600'
+  },
+  {
+    id: 'teleios-comprehensive',
+    title: 'Todos los Usos de Τέλειος en el NT',
+    description: 'Análisis exhaustivo de las 19 ocurrencias: 0 significan impecabilidad, todas significan madurez/completitud',
+    category: 'Análisis Textual',
+    icon: <BarChart3 size={24} />,
+    component: TeleiosComprehensive,
+    color: 'from-green-500 to-emerald-700',
+    textColor: 'text-green-600'
+  }
   ];
 
   // Read URL parameters on mount
