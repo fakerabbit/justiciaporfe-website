@@ -12,6 +12,7 @@ import OrdenSantuario from './components/diagrams/visual-orden-santuario';
 import Exodo21Argumento from './components/diagrams/visual-exodo21-argumento';
 import Romanos5Diagram from './components/diagrams/visual-romanos5-diagram';
 import Corintios15Diagram from './components/diagrams/visual-corintios15-diagram';
+import Romanos213Contexto from './components/diagrams/visual-romanos213';
 
 const JusticiaPorFeIntegrated = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -82,6 +83,16 @@ const JusticiaPorFeIntegrated = () => {
       component: Corintios15Diagram,
       color: 'from-teal-500 to-teal-700',
       textColor: 'text-teal-600'
+    },
+    {
+      id: 'romanos213',
+      title: 'Romanos 2:13 en Contexto',
+      description: 'La norma imposible: Pablo establece el estándar de perfección para mostrarnos que necesitamos a Cristo',
+      category: 'Teología Paulina',
+      icon: <Scale size={24} />,
+      component: Romanos213Contexto,
+      color: 'from-purple-500 to-indigo-700',
+      textColor: 'text-purple-600'
     }
   ];
 

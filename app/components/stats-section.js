@@ -3,7 +3,7 @@ import { BookOpen, Heart, Lightbulb } from 'lucide-react';
 
 // Store animation state outside component to survive re-renders
 const animationState = {
-  counter6: { hasAnimated: false, currentValue: 0 },
+  counter7: { hasAnimated: false, currentValue: 0 },
   counter15: { hasAnimated: false, currentValue: 0 },
   counter100: { hasAnimated: false, currentValue: 0 }
 };
@@ -74,7 +74,7 @@ const StatsSection = () => {
           <div className="p-6 space-y-2 transform hover:scale-105 transition-all">
             <BookOpen className="w-12 h-12 text-blue-600 mx-auto" />
             <div className="text-4xl font-bold text-gray-800">
-              <AnimatedCounter end={6} counterId="counter6" />
+              <AnimatedCounter end={7} counterId="counter7" />
             </div>
             <p className="text-gray-600">Diagramas Interactivos</p>
           </div>
