@@ -19,6 +19,7 @@ import DosPerfecciones from './components/diagrams/visual-two-perfections';
 import TelosTeleios from './components/diagrams/visual-telos-teleios';
 import TeleiosComprehensive from './components/diagrams/visual-teleios-comprehensive';
 import EzekielDiagram from './components/diagrams/visual-ezekiel18-diagram';
+import CuandoPerfeccionDiagram from './components/diagrams/visual-cuando-perfeccion';
 
 const JusticiaPorFeIntegrated = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -147,7 +148,17 @@ const JusticiaPorFeIntegrated = () => {
      component: EzekielDiagram,
      color: 'from-red-500 to-orange-700',
      textColor: 'text-red-600'
-   }
+   },
+   {
+    id: 'cuando-perfeccion',
+    title: 'Cuándo los redimidos alcanzarán la perfección en sí mismos',
+    description: 'Eventualmente los redimidos deben vivir sin un Mediador y obedecer la Ley perfectamente.',
+    category: 'Análisis Lógico',
+    icon: <BarChart3 size={24} />,
+    component: CuandoPerfeccionDiagram,
+    color: 'from-amber-500 to-amber-700',
+    textColor: 'text-amber-600'
+  },
   ];
 
   // Read URL parameters on mount
