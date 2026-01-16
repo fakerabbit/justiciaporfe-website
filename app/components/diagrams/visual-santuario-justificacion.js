@@ -652,7 +652,7 @@ const MediadorSection = () => {
           </div>
           <div className="bg-white/20 p-3 rounded">
             <div className="font-semibold mb-1">2. Nunca Lo Suficientemente Justos Por Nosotros Mismos</div>
-            <div className="text-sm">Incluso en el día del Juicio, los israelitas necesitaban que el mediador entrara por ellos, pues no habían alcanzo la perfección requerida para pasar el juicio</div>
+            <div className="text-sm">Incluso en el día del Juicio, los israelitas necesitaban que el mediador entrara por ellos, pues no habían alcanzado la perfección requerida para pasar el juicio</div>
           </div>
           <div className="bg-white/20 p-3 rounded">
             <div className="font-semibold mb-1">3. El Día de Expiación Reforzó la Necesidad del Mediador</div>

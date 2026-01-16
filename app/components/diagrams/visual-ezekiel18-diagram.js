@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BookOpen, Scale, Skull, AlertCircle, CheckCircle, XCircle } from 'lucide-react';
 
 const EzekielDiagram = () => {
-  const [activeSection, setActiveSection] = useState(null);
-
   return (
     <div className="w-full max-w-6xl mx-auto p-6 bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Header */}
@@ -98,75 +96,55 @@ const EzekielDiagram = () => {
         
         <div className="grid md:grid-cols-2 gap-4">
           {/* Romans 5:12 */}
-          <div 
-            className="bg-purple-50 p-4 rounded-lg cursor-pointer hover:bg-purple-100 transition-colors"
-            onClick={() => setActiveSection(activeSection === 'rom5' ? null : 'rom5')}
-          >
+          <div className="bg-purple-50 p-4 rounded-lg">
             <h4 className="font-semibold text-purple-900 mb-2">Romanos 5:12</h4>
             <p className="text-sm text-purple-800 italic mb-2">
               "Por tanto, como el pecado entró en el mundo por un hombre, y por el pecado la muerte, así la muerte pasó a todos los hombres, por cuanto todos pecaron"
             </p>
-            {activeSection === 'rom5' && (
-              <div className="mt-3 pt-3 border-t border-purple-200">
-                <p className="text-sm text-purple-700">
-                  <strong>Contradice la TUG:</strong> La muerte pasó a TODOS, no solo a los que personalmente pecaron después. El pecado de Adán afectó a toda la humanidad inmediatamente.
-                </p>
-              </div>
-            )}
+            <div className="mt-3 pt-3 border-t border-purple-200">
+              <p className="text-sm text-purple-700">
+                <strong>Contradice la TUG:</strong> La muerte pasó a TODOS, no solo a los que personalmente pecaron después. El pecado de Adán afectó a toda la humanidad inmediatamente.
+              </p>
+            </div>
           </div>
 
           {/* Romans 3:23 */}
-          <div 
-            className="bg-purple-50 p-4 rounded-lg cursor-pointer hover:bg-purple-100 transition-colors"
-            onClick={() => setActiveSection(activeSection === 'rom3' ? null : 'rom3')}
-          >
+          <div className="bg-purple-50 p-4 rounded-lg">
             <h4 className="font-semibold text-purple-900 mb-2">Romanos 3:23</h4>
             <p className="text-sm text-purple-800 italic mb-2">
               "Por cuanto todos pecaron, y están destituidos de la gloria de Dios"
             </p>
-            {activeSection === 'rom3' && (
-              <div className="mt-3 pt-3 border-t border-purple-200">
-                <p className="text-sm text-purple-700">
-                  <strong>Contradice la TUG:</strong> Todos están destituidos de la gloria antes de cualquier pecado personal. El estado caído es universal.
-                </p>
-              </div>
-            )}
+            <div className="mt-3 pt-3 border-t border-purple-200">
+              <p className="text-sm text-purple-700">
+                <strong>Contradice la TUG:</strong> Todos están destituidos de la gloria antes de cualquier pecado personal. El estado caído es universal.
+              </p>
+            </div>
           </div>
 
           {/* 1 Corinthians 15:22 */}
-          <div 
-            className="bg-purple-50 p-4 rounded-lg cursor-pointer hover:bg-purple-100 transition-colors"
-            onClick={() => setActiveSection(activeSection === 'cor15' ? null : 'cor15')}
-          >
+          <div className="bg-purple-50 p-4 rounded-lg">
             <h4 className="font-semibold text-purple-900 mb-2">1 Corintios 15:22</h4>
             <p className="text-sm text-purple-800 italic mb-2">
               "Porque así como en Adán todos mueren, también en Cristo todos serán vivificados"
             </p>
-            {activeSection === 'cor15' && (
-              <div className="mt-3 pt-3 border-t border-purple-200">
-                <p className="text-sm text-purple-700">
-                  <strong>Contradice la TUG:</strong> "En Adán" todos mueren - es una condición heredada, no una elección personal. Paralelismo directo con "en Cristo".
-                </p>
-              </div>
-            )}
+            <div className="mt-3 pt-3 border-t border-purple-200">
+              <p className="text-sm text-purple-700">
+                <strong>Contradice la TUG:</strong> "En Adán" todos mueren - es una condición heredada, no una elección personal. Paralelismo directo con "en Cristo".
+              </p>
+            </div>
           </div>
 
           {/* Psalm 51:5 */}
-          <div 
-            className="bg-purple-50 p-4 rounded-lg cursor-pointer hover:bg-purple-100 transition-colors"
-            onClick={() => setActiveSection(activeSection === 'ps51' ? null : 'ps51')}
-          >
+          <div className="bg-purple-50 p-4 rounded-lg">
             <h4 className="font-semibold text-purple-900 mb-2">Salmo 51:5</h4>
             <p className="text-sm text-purple-800 italic mb-2">
               "He aquí, en maldad he sido formado, y en pecado me concibió mi madre"
             </p>
-            {activeSection === 'ps51' && (
-              <div className="mt-3 pt-3 border-t border-purple-200">
-                <p className="text-sm text-purple-700">
-                  <strong>Contradice la TUG:</strong> David reconoce una naturaleza pecaminosa desde la concepción, antes de cualquier acto personal.
-                </p>
-              </div>
-            )}
+            <div className="mt-3 pt-3 border-t border-purple-200">
+              <p className="text-sm text-purple-700">
+                <strong>Contradice la TUG:</strong> David reconoce una naturaleza pecaminosa desde la concepción, antes de cualquier acto personal.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -220,12 +198,6 @@ const EzekielDiagram = () => {
         </div>
       </div>
 
-      {/* Footer Note */}
-      <div className="mt-6 text-center text-sm text-slate-600">
-        <p>
-          Haga clic en los versículos morados para ver explicaciones detalladas de cómo contradicen la interpretación de la TUG
-        </p>
-      </div>
     </div>
   );
 };
