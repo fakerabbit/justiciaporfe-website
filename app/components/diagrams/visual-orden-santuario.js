@@ -1,48 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ArrowRight, AlertTriangle, CheckCircle } from 'lucide-react';
 
 const OrdenSantuario = () => {
-  const [view, setView] = useState('biblico'); // 'biblico' or 'tug'
-
   return (
-    <div className="w-full max-w-6xl mx-auto p-6">
+    <div className="w-full max-w-6xl mx-auto p-6 space-y-8">
+      {/* Header */}
+      <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-6 rounded-xl shadow-2xl">
+        <h2 className="text-3xl font-bold text-center mb-2">
+          El Orden del Santuario
+        </h2>
+        <p className="text-center text-purple-100">
+          Éxodo 30:7-8 - Incienso ANTES de Aceite
+        </p>
+      </div>
+
+      {/* Biblical Order Section */}
       <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
-        {/* Header */}
-        <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-6">
-          <h2 className="text-3xl font-bold text-center mb-2">
-            El Orden del Santuario
-          </h2>
-          <p className="text-center text-purple-100">
-            Éxodo 30:7-8 - Incienso ANTES de Aceite
-          </p>
+        <div className="bg-green-600 text-white p-4">
+          <h3 className="text-2xl font-bold text-center">
+            ✓ Orden Bíblico Correcto
+          </h3>
         </div>
-
-        {/* Toggle View */}
-        <div className="flex justify-center gap-4 p-6 bg-slate-50 border-b">
-          <button
-            onClick={() => setView('biblico')}
-            className={`px-6 py-3 rounded-lg font-semibold transition-all ${
-              view === 'biblico'
-                ? 'bg-green-600 text-white shadow-lg'
-                : 'bg-white text-slate-600 hover:bg-slate-100'
-            }`}
-          >
-            ✓ Orden Bíblico
-          </button>
-          <button
-            onClick={() => setView('tug')}
-            className={`px-6 py-3 rounded-lg font-semibold transition-all ${
-              view === 'tug'
-                ? 'bg-red-600 text-white shadow-lg'
-                : 'bg-white text-slate-600 hover:bg-slate-100'
-            }`}
-          >
-            ✗ Inversión de la TUG
-          </button>
-        </div>
-
         {/* Biblical Order */}
-        {view === 'biblico' && (
+        <div className="p-8 space-y-8">(
           <div className="p-8 space-y-8 animate-fadeIn">
             <div className="bg-green-50 border-2 border-green-500 rounded-lg p-6">
               <div className="flex items-center gap-3 mb-4">
@@ -162,10 +142,18 @@ const OrdenSantuario = () => {
               </p>
             </div>
           </div>
-        )}
+        </div>
+      </div>
 
+      {/* TUG Reversal Section */}
+      <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
+        <div className="bg-red-600 text-white p-4">
+          <h3 className="text-2xl font-bold text-center">
+            ✗ Inversión de la TUG
+          </h3>
+        </div>
         {/* TUG Reversal */}
-        {view === 'tug' && (
+        <div className="p-8 space-y-8">
           <div className="p-8 space-y-8 animate-fadeIn">
             <div className="bg-red-50 border-2 border-red-500 rounded-lg p-6">
               <div className="flex items-center gap-3 mb-4">
@@ -300,7 +288,7 @@ const OrdenSantuario = () => {
               </p>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ const ComparacionMaestra = () => {
     {
       categoria: "¿Qué Condena la Ley?",
       tug: "Solo nuestros actos pecaminosos",
-      biblico: "La Ley condena tanto el Estado/naturaleza que poseemos y no sólo actos consumados",
+      biblico: "La Ley condena tanto el Estado / naturaleza que poseemos y no sólo actos consumados",
       simbolos: "Levadura permea TODO | Leproso ES inmundo | Esclavo por nacimiento",
       errores: "La Ley no condena nuestro estado de ser"
     },
@@ -42,7 +42,7 @@ const ComparacionMaestra = () => {
       categoria: "La Última Generación",
       tug: "Puede vivir sin mediador porque alcanzó la perfección",
       biblico: "Puede vivir sin mediador porque fue declarado justo en Cristo en el Juicio",
-      simbolos: "Imposible alcanzar la justificación propia con una naturaleza leudada/leprosa/esclava. Necesitamos una justicia ajena: la de Cristo",
+      simbolos: "Imposible alcanzar la justificación propia con una naturaleza leudada / leprosa / esclava. Necesitamos una justicia ajena: la de Cristo",
       errores: "Es posible alcanzar la perfección necesaria para justificación con una naturaleza leudada/leprosa/esclava del pecado"
     },
     {
