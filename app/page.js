@@ -17,6 +17,7 @@ import Romanos213Contexto from './components/diagrams/visual-romanos213';
 import DosPerfecciones from './components/diagrams/visual-two-perfections';
 import TelosTeleios from './components/diagrams/visual-telos-teleios';
 import TeleiosComprehensive from './components/diagrams/visual-teleios-comprehensive';
+import EzekielDiagram from './components/diagrams/visual-ezekiel18-diagram';
 
 const JusticiaPorFeIntegrated = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -125,7 +126,17 @@ const JusticiaPorFeIntegrated = () => {
     component: TeleiosComprehensive,
     color: 'from-green-500 to-emerald-700',
     textColor: 'text-green-600'
-  }
+  },
+  {
+     id: 'ezekiel18',
+     title: 'Ezequiel 18:20 en Contexto',
+     description: 'Justicia civil vs. realidad espiritual: Cómo la TUG confunde categorías bíblicas distintas',
+     category: 'Análisis Textual',
+     icon: <BookOpen size={24} />,
+     component: EzekielDiagram,
+     color: 'from-red-500 to-orange-700',
+     textColor: 'text-red-600'
+   }
   ];
 
   // Read URL parameters on mount

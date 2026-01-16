@@ -77,6 +77,7 @@ import VisualRomanos213 from './diagrams/visual-romanos213';
 import VisualTwoPerfections from './diagrams/visual-two-perfections';
 import VisualTelosTeleios from './diagrams/visual-telos-teleios';
 import VisualTeleiosComprehensive from './diagrams/visual-teleios-comprehensive';
+import VisualEzequielDiagram from './diagrams/visual-ezekiel18-diagram';
 
 // Array of all diagram components
 const DIAGRAMS = [
@@ -90,6 +91,7 @@ const DIAGRAMS = [
   VisualTwoPerfections,
   VisualTelosTeleios,
   VisualTeleiosComprehensive,
+  VisualEzequielDiagram
 ];
 
 const StatsSection = () => {
