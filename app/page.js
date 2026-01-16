@@ -345,7 +345,7 @@ const JusticiaPorFeIntegrated = () => {
       </header>
 
       {/* Stats Section */}
-      <StatsSection />
+      {/*<StatsSection />*/}
 
       {/* Introduction Section */}
       <section className="py-16 bg-gradient-to-r from-slate-700 to-slate-900 text-white">
