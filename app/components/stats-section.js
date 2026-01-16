@@ -78,12 +78,14 @@ import VisualTwoPerfections from './diagrams/visual-two-perfections';
 import VisualTelosTeleios from './diagrams/visual-telos-teleios';
 import VisualTeleiosComprehensive from './diagrams/visual-teleios-comprehensive';
 import VisualEzequielDiagram from './diagrams/visual-ezekiel18-diagram';
+import VisualSantuarioJustificacion from './diagrams/visual-santuario-justificacion';
 
 // Array of all diagram components
 const DIAGRAMS = [
   VisualComparacionMaestra,
   VisualTresSimbolos,
   VisualOrdenSantuario,
+  VisualSantuarioJustificacion,
   VisualExodo21Argumento,
   VisualRomanos5Diagram,
   VisualCorintios15Diagram,

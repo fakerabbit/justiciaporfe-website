@@ -10,6 +10,7 @@ import SubscribeSection from './components/subscribe-section';
 import ComparacionMaestra from './components/diagrams/visual-comparacion-maestra';
 import TresSimbolos from './components/diagrams/visual-tres-simbolos';
 import OrdenSantuario from './components/diagrams/visual-orden-santuario';
+import SantuarioJustificacionDiagram from './components/diagrams/visual-santuario-justificacion';
 import Exodo21Argumento from './components/diagrams/visual-exodo21-argumento';
 import Romanos5Diagram from './components/diagrams/visual-romanos5-diagram';
 import Corintios15Diagram from './components/diagrams/visual-corintios15-diagram';
@@ -56,6 +57,16 @@ const JusticiaPorFeIntegrated = () => {
       component: OrdenSantuario,
       color: 'from-indigo-500 to-indigo-700',
       textColor: 'text-indigo-600'
+    },
+    {
+      id: 'santuario-justificacion',
+      title: 'El Patrón del Santuario',
+      description: 'Servicio Diario y Servicio Anual',
+      category: 'Doctrina del Santuario',
+      icon: <BookOpen size={24} />,
+      component: SantuarioJustificacionDiagram,
+      color: 'from-blue-500 to-blue-700',
+      textColor: 'text-blue-600'
     },
     {
       id: 'exodo21',
