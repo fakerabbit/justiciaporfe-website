@@ -1,0 +1,17 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield background -->
+  <path d="M256 32C256 32 128 64 128 128V256C128 384 256 480 256 480C256 480 384 384 384 256V128C384 64 256 32 256 32Z" 
+        fill="#1e40af" stroke="#1e3a8a" stroke-width="8"/>
+  
+  <!-- Cross (symbol of Christ's finished work) -->
+  <g fill="#ffffff">
+    <!-- Vertical bar of cross -->
+    <rect x="232" y="128" width="48" height="224" rx="8"/>
+    <!-- Horizontal bar of cross -->
+    <rect x="176" y="200" width="160" height="48" rx="8"/>
+  </g>
+  
+  <!-- Inner shield highlight for depth -->
+  <path d="M256 56C256 56 152 80 152 136V256C152 368 256 456 256 456C256 456 360 368 360 256V136C360 80 256 56 256 56Z" 
+        fill="none" stroke="#3b82f6" stroke-width="4" opacity="0.3"/>
+</svg>
