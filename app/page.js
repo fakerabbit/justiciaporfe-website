@@ -1,9 +1,10 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { BookOpen, Mail, ArrowRight, CheckCircle, Users, BarChart3, Lightbulb, Scale, Link2, Home, Menu, X } from 'lucide-react';
+import { BookOpen, ArrowRight, Users, BarChart3, Lightbulb, Scale, Link2, Home, Menu, X } from 'lucide-react';
 
 import StatsSection from './components/stats-section';
+import SubscribeSection from './components/subscribe-section';
 
 // Import diagram components
 import ComparacionMaestra from './components/diagrams/visual-comparacion-maestra';
@@ -20,8 +21,6 @@ import TeleiosComprehensive from './components/diagrams/visual-teleios-comprehen
 const JusticiaPorFeIntegrated = () => {
   const [currentPage, setCurrentPage] = useState('home');
   const [currentDiagram, setCurrentDiagram] = useState(null);
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -191,40 +190,6 @@ const JusticiaPorFeIntegrated = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const handleSubscribe = async () => {
-    if (!email) return;
-    
-    try {
-      const CONVERTKIT_FORM_ID = 'YOUR_FORM_ID';
-      const CONVERTKIT_API_KEY = 'YOUR_API_KEY';
-      
-      const response = await fetch(`https://api.convertkit.com/v3/forms/${CONVERTKIT_FORM_ID}/subscribe`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          api_key: CONVERTKIT_API_KEY,
-          email: email,
-          tags: [5678901],
-        }),
-      });
-
-      if (response.ok) {
-        setSubscribed(true);
-        setTimeout(() => {
-          setEmail('');
-          setSubscribed(false);
-        }, 5000);
-      } else {
-        alert('Hubo un error. Por favor intenta de nuevo.');
-      }
-    } catch (error) {
-      console.error('Error subscribing:', error);
-      alert('Hubo un error. Por favor intenta de nuevo.');
-    }
-  };
 
   // Navigation Component
   const Navigation = () => (
@@ -432,43 +397,7 @@ const JusticiaPorFeIntegrated = () => {
       </section>
 
       {/* Subscribe Section */}
-      <section id="subscribe" className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <Mail className="w-16 h-16 mx-auto mb-6" />
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Recibe Nuevos Estudios en tu Email
-          </h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Suscríbete para recibir notificaciones cuando publiquemos nuevos artículos y diagramas
-          </p>
-          
-          {!subscribed ? (
-            <div className="max-w-md mx-auto">
-              <div className="flex flex-col sm:flex-row gap-3">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  onKeyPress={(e) => e.key === 'Enter' && handleSubscribe()}
-                  placeholder="tu@email.com"
-                  className="flex-1 px-6 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300"
-                />
-                <button
-                  onClick={handleSubscribe}
-                  className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all whitespace-nowrap"
-                >
-                  Suscribirse
-                </button>
-              </div>
-            </div>
-          ) : (
-            <div className="max-w-md mx-auto bg-green-500 text-white px-6 py-4 rounded-lg flex items-center justify-center gap-3">
-              <CheckCircle size={24} />
-              <span className="font-semibold">¡Gracias por suscribirte!</span>
-            </div>
-          )}
-        </div>
-      </section>
+      <SubscribeSection />
 
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-300 py-12">
