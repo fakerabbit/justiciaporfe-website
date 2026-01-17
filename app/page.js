@@ -20,6 +20,7 @@ import TelosTeleios from './components/diagrams/visual-telos-teleios';
 import TeleiosComprehensive from './components/diagrams/visual-teleios-comprehensive';
 import EzekielDiagram from './components/diagrams/visual-ezekiel18-diagram';
 import CuandoPerfeccionDiagram from './components/diagrams/visual-cuando-perfeccion';
+import ConsumadoEsDiagram from './components/diagrams/visual-consumado-es';
 
 const JusticiaPorFeIntegrated = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -159,6 +160,16 @@ const JusticiaPorFeIntegrated = () => {
     color: 'from-amber-500 to-amber-700',
     textColor: 'text-amber-600'
   },
+  {
+    id: 'consumado-es',
+    title: 'CONSUMADO ES - La Obra Completa de Cristo',
+    description: 'Cristo vindicó completamente la Ley y el Carácter de Dios.',
+    category: 'Análisis Textual',
+    icon: <Scale size={24} />,
+    component: ConsumadoEsDiagram,
+    color: 'from-teal-500 to-teal-700',
+    textColor: 'text-teal-600'
+  }
   ];
 
   // Read URL parameters on mount

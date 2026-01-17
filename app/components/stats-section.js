@@ -80,6 +80,7 @@ import VisualTeleiosComprehensive from './diagrams/visual-teleios-comprehensive'
 import VisualEzequielDiagram from './diagrams/visual-ezekiel18-diagram';
 import VisualSantuarioJustificacion from './diagrams/visual-santuario-justificacion';
 import CuandoPerfeccionDiagram from './diagrams/visual-cuando-perfeccion';
+import ConsumadoEsDiagram from './diagrams/visual-consumado-es';
 
 // Array of all diagram components
 const DIAGRAMS = [
@@ -95,7 +96,8 @@ const DIAGRAMS = [
   VisualTelosTeleios,
   VisualTeleiosComprehensive,
   VisualEzequielDiagram,
-  CuandoPerfeccionDiagram
+  CuandoPerfeccionDiagram,
+  ConsumadoEsDiagram
 ];
 
 const StatsSection = () => {
