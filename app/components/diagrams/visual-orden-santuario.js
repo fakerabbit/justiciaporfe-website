@@ -3,13 +3,13 @@ import { ArrowRight, AlertTriangle, CheckCircle } from 'lucide-react';
 
 const OrdenSantuario = () => {
   return (
-    <div className="w-full max-w-6xl mx-auto p-6 space-y-8">
+    <div className="w-full max-w-6xl mx-auto p-4 md:p-6 space-y-8">
       {/* Header */}
-      <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-6 rounded-xl shadow-2xl">
-        <h2 className="text-3xl font-bold text-center mb-2">
+      <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-4 md:p-6 rounded-xl shadow-2xl">
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">
           El Orden del Santuario
         </h2>
-        <p className="text-center text-purple-100">
+        <p className="text-sm md:text-base text-center text-purple-100">
           Éxodo 30:7-8 - Incienso ANTES de Aceite
         </p>
       </div>
@@ -71,12 +71,12 @@ const OrdenSantuario = () => {
                     <p className="font-semibold mb-2 text-white">📖 Significado Teológico:</p>
                     <p className="text-sm text-white">JUSTIFICACIÓN - Somos declarados justos por los méritos de Cristo</p>
                   </div>
-                  <div className="mt-4 grid grid-cols-3 gap-2 text-sm">
+                  <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-2 text-sm">
                     <div className="bg-amber-900 bg-opacity-40 p-2 rounded text-center border border-amber-800">
                       🍞 Declarados "Sin levadura" en Cristo
                     </div>
                     <div className="bg-amber-900 bg-opacity-40 p-2 rounded text-center border border-amber-800">
-                      🩹 Declarados "Limpios" en Cristo
+                      🦠 Declarados "Limpios" en Cristo
                     </div>
                     <div className="bg-amber-900 bg-opacity-40 p-2 rounded text-center border border-amber-800">
                       ⛓️ Declarados "Libres" en Cristo
@@ -187,12 +187,12 @@ const OrdenSantuario = () => {
                     <p className="font-semibold mb-2 text-white">⚠️ Problema Teológico:</p>
                     <p className="text-sm text-white">Hace nuestra SANTIFICACIÓN la base de nuestra justificación</p>
                   </div>
-                  <div className="mt-4 grid grid-cols-3 gap-2 text-sm">
+                  <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-2 text-sm">
                     <div className="bg-red-900 bg-opacity-70 p-2 rounded text-center border border-red-800">
                       🍞 Purgar levadura propia
                     </div>
                     <div className="bg-red-900 bg-opacity-70 p-2 rounded text-center border border-red-800">
-                      🩹 Auto-limpiarse
+                      🦠 Auto-limpiarse
                     </div>
                     <div className="bg-red-900 bg-opacity-70 p-2 rounded text-center border border-red-800">
                       ⛓️ Auto-libertarse
@@ -255,7 +255,7 @@ const OrdenSantuario = () => {
               </div>
 
               <div className="bg-red-50 border-l-4 border-red-600 p-4 rounded-r-lg">
-                <p className="font-semibold text-red-900 mb-2">🩹 Lepra:</p>
+                <p className="font-semibold text-red-900 mb-2">🦠 Lepra:</p>
                 <p className="text-slate-700">
                   Un leproso no puede auto-limpiarse. Está EXCLUIDO hasta que el sacerdote lo declare limpio. 
                   Intentar "desarrollar carácter" mientras estás en estado de lepra es como intentar 

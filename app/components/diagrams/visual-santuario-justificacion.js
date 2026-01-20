@@ -7,55 +7,55 @@ const SanctaurioJustificacionDiagram = () => {
   const [hoveredElement, setHoveredElement] = useState(null);
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-6 bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl shadow-2xl">
+    <div className="w-full max-w-6xl mx-auto p-4 md:p-6 bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl shadow-2xl">
       {/* Header */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-8 md:mb-12">
         <div className="flex items-center justify-center gap-3 mb-4">
-          <Building className="w-10 h-10 text-amber-700" />
-          <h2 className="text-3xl font-bold text-amber-900">
+          <Building className="w-8 h-8 md:w-10 md:h-10 text-amber-700" />
+          <h2 className="text-2xl md:text-3xl font-bold text-amber-900">
             LA DOCTRINA DEL SANTUARIO
           </h2>
         </div>
-        <p className="text-xl text-amber-800 font-semibold">
+        <p className="text-lg md:text-xl text-amber-800 font-semibold">
           El Evangelio Visual de Dios: Justificación Solo por Fe
         </p>
       </div>
 
       {/* All Content - Sequential Sections */}
-      <div className="space-y-12">
+      <div className="space-y-8 md:space-y-12">
         
         {/* Section 1: El Patrón del Santuario */}
-        <div className="bg-white rounded-lg shadow-lg p-6">
-          <div className="mb-6">
-            <h3 className="text-2xl font-bold text-amber-900 mb-2">El Patrón del Santuario</h3>
-            <p className="text-amber-700">Servicio Diario y Servicio Anual</p>
+        <div className="bg-white rounded-lg shadow-lg p-4 md:p-6">
+          <div className="mb-4 md:mb-6">
+            <h3 className="text-xl md:text-2xl font-bold text-amber-900 mb-2">El Patrón del Santuario</h3>
+            <p className="text-sm md:text-base text-amber-700">Servicio Diario y Servicio Anual</p>
           </div>
           <PatronSection hoveredElement={hoveredElement} setHoveredElement={setHoveredElement} />
         </div>
 
         {/* Section 2: Dos Símbolos, Dos Realidades */}
-        <div className="bg-white rounded-lg shadow-lg p-6">
-          <div className="mb-6">
-            <h3 className="text-2xl font-bold text-amber-900 mb-2">Dos Símbolos, Dos Realidades</h3>
-            <p className="text-amber-700">Sangre e Incienso - Ambos Externos a Nosotros</p>
+        <div className="bg-white rounded-lg shadow-lg p-4 md:p-6">
+          <div className="mb-4 md:mb-6">
+            <h3 className="text-xl md:text-2xl font-bold text-amber-900 mb-2">Dos Símbolos, Dos Realidades</h3>
+            <p className="text-sm md:text-base text-amber-700">Sangre e Incienso - Ambos Externos a Nosotros</p>
           </div>
           <SimbolosSection hoveredElement={hoveredElement} setHoveredElement={setHoveredElement} />
         </div>
 
         {/* Section 3: Errores de la TUG */}
-        <div className="bg-white rounded-lg shadow-lg p-6">
-          <div className="mb-6">
-            <h3 className="text-2xl font-bold text-amber-900 mb-2">Errores de la TUG</h3>
-            <p className="text-amber-700">Cómo la TUG Malinterpreta el Santuario</p>
+        <div className="bg-white rounded-lg shadow-lg p-4 md:p-6">
+          <div className="mb-4 md:mb-6">
+            <h3 className="text-xl md:text-2xl font-bold text-amber-900 mb-2">Errores de la TUG</h3>
+            <p className="text-sm md:text-base text-amber-700">Cómo la TUG Malinterpreta el Santuario</p>
           </div>
           <LGTSection />
         </div>
 
         {/* Section 4: La Necesidad del Mediador */}
-        <div className="bg-white rounded-lg shadow-lg p-6">
-          <div className="mb-6">
-            <h3 className="text-2xl font-bold text-amber-900 mb-2">La Necesidad del Mediador</h3>
-            <p className="text-amber-700">Ningún Israelita Podía Entrar</p>
+        <div className="bg-white rounded-lg shadow-lg p-4 md:p-6">
+          <div className="mb-4 md:mb-6">
+            <h3 className="text-xl md:text-2xl font-bold text-amber-900 mb-2">La Necesidad del Mediador</h3>
+            <p className="text-sm md:text-base text-amber-700">Ningún Israelita Podía Entrar</p>
           </div>
           <MediadorSection />
         </div>
@@ -63,12 +63,12 @@ const SanctaurioJustificacionDiagram = () => {
       </div>
 
       {/* Footer Summary */}
-      <div className="mt-12 bg-gradient-to-r from-amber-700 to-orange-700 text-white p-6 rounded-lg">
+      <div className="mt-8 md:mt-12 bg-gradient-to-r from-amber-700 to-orange-700 text-white p-4 md:p-6 rounded-lg">
         <div className="flex items-start gap-3">
-          <Info className="w-6 h-6 flex-shrink-0 mt-1" />
+          <Info className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0 mt-1" />
           <div>
-            <h3 className="font-bold text-lg mb-2">Conclusión Clave:</h3>
-            <p className="text-amber-50">
+            <h3 className="font-bold text-base md:text-lg mb-2">Conclusión Clave:</h3>
+            <p className="text-sm md:text-base text-amber-50">
               El santuario enseña que desde el principio hasta el fin, somos justificados únicamente por los méritos de Cristo—nunca por nuestro carácter logrado. Tanto el servicio diario como el anual requirieron <strong>sangre</strong> (perdón) e <strong>incienso</strong> (aceptación), probando que la base de nuestra justificación nunca cambia.
             </p>
           </div>
@@ -444,13 +444,62 @@ const LGTSection = () => {
           </div>
           <h4 className="font-bold text-red-900 text-lg">Hace que la justicia propia manchada de pecado reemplace lo que la Sangre y el Incienso otorgan por gracia</h4>
         </div>
-        <div className="ml-11">
-          <table className="w-full bg-white rounded overflow-hidden">
+        <div className="ml-0 md:ml-11">
+          {/* Mobile Card Layout */}
+          <div className="md:hidden space-y-3">
+            {/* Sangre */}
+            <div className="bg-white rounded-lg p-4 border-2 border-red-300">
+              <div className="font-bold text-red-700 text-lg mb-3">Sangre</div>
+              <div className="space-y-2 text-sm">
+                <div>
+                  <span className="font-semibold text-gray-600">Lo que Proporcionaba:</span>
+                  <div className="text-red-700">Perdón</div>
+                </div>
+                <div>
+                  <span className="font-semibold text-gray-600">Fuente:</span>
+                  <div className="text-red-700">Muerte de Cristo</div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Incienso */}
+            <div className="bg-white rounded-lg p-4 border-2 border-amber-300">
+              <div className="font-bold text-amber-700 text-lg mb-3">Incienso</div>
+              <div className="space-y-2 text-sm">
+                <div>
+                  <span className="font-semibold text-gray-600">Lo que Proporcionaba:</span>
+                  <div className="text-red-700">Aceptación</div>
+                </div>
+                <div>
+                  <span className="font-semibold text-gray-600">Fuente:</span>
+                  <div className="text-red-700">Justicia de Cristo</div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Carácter (según TUG) */}
+            <div className="bg-red-50 rounded-lg p-4 border-2 border-red-400">
+              <div className="font-bold text-gray-700 text-lg mb-3">Carácter (según TUG)</div>
+              <div className="space-y-2 text-sm">
+                <div>
+                  <span className="font-semibold text-gray-600">Lo que Proporcionaba:</span>
+                  <div className="text-red-700">❌ Intenta proporcionar aceptación</div>
+                </div>
+                <div>
+                  <span className="font-semibold text-gray-600">Fuente:</span>
+                  <div className="text-red-700">❌ Logro humano</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop Table Layout */}
+          <table className="hidden md:table w-full bg-white rounded overflow-hidden">
             <thead className="bg-red-500">
               <tr>
-                <th className="p-3 text-left">Elemento</th>
-                <th className="p-3 text-left">Lo que Proporcionaba</th>
-                <th className="p-3 text-left">Fuente</th>
+                <th className="p-3 text-left text-white">Elemento</th>
+                <th className="p-3 text-left text-white">Lo que Proporcionaba</th>
+                <th className="p-3 text-left text-white">Fuente</th>
               </tr>
             </thead>
             <tbody className="text-sm">
@@ -471,6 +520,7 @@ const LGTSection = () => {
               </tr>
             </tbody>
           </table>
+          
           <div className="mt-3 p-3 bg-amber-100 rounded border border-amber-300">
             <p className="text-sm text-amber-900">
               <strong>El Error:</strong> La TUG hace que la <strong>santificación del creyente</strong> haga lo que el <strong>incienso</strong> fue diseñado para hacer: proporcionar la justicia que nos hace aceptables ante Dios.

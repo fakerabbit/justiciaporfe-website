@@ -38,7 +38,7 @@ const TresSimbolos = () => {
     },
     {
       id: 'lepra',
-      emoji: '🩹',
+      emoji: '🦠',
       titulo: 'LA LEPRA',
       subtitulo: 'Estado de Impureza Legal',
       color: 'red',
@@ -211,7 +211,7 @@ const TresSimbolos = () => {
             </div>
           </div>
           <div className="text-center">
-            <div className="text-4xl mb-2">🩹</div>
+            <div className="text-4xl mb-2">🦠</div>
             <div className="font-semibold mb-2">Lepra</div>
             <div className="text-sm text-blue-100">
               Estado de impureza → No se puede simplemente limpiar, necesita una DECLARACIÓN LEGAL

@@ -5,22 +5,22 @@ const Romanos5Diagram = () => {
   const [selectedSide, setSelectedSide] = useState(null); // 'adam' or 'christ'
 
   return (
-    <div className="w-full max-w-7xl mx-auto p-6">
+    <div className="w-full max-w-7xl mx-auto p-4 md:p-6">
       <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-6">
-          <h2 className="text-3xl font-bold text-center mb-2">
+        <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-4 md:p-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">
             Romanos 5:12-19
           </h2>
-          <p className="text-center text-indigo-100 text-lg">
+          <p className="text-center text-indigo-100 text-base md:text-lg">
             Dos Adanes, Dos Representaciones, Dos Destinos
           </p>
         </div>
 
         {/* Key Verse Banner */}
-        <div className="bg-purple-50 border-b-2 border-purple-200 p-6">
+        <div className="bg-purple-50 border-b-2 border-purple-200 p-4 md:p-6">
           <div className="max-w-4xl mx-auto">
-            <p className="text-center text-lg text-slate-700 italic">
+            <p className="text-center text-sm md:text-lg text-slate-700 italic">
               <strong className="text-purple-900">Romanos 5:19 —</strong> "Porque así como por la 
               desobediencia de un hombre los muchos fueron <span className="bg-red-200 px-1 rounded">constituidos pecadores</span>, 
               así también por la obediencia de uno, los muchos serán <span className="bg-green-200 px-1 rounded">constituidos justos</span>."
@@ -28,7 +28,7 @@ const Romanos5Diagram = () => {
           </div>
         </div>
 
-        <div className="p-8">
+        <div className="p-4 md:p-8">
           {/* The Parallel Structure */}
           <div className="mb-8">
             <div className="bg-slate-100 rounded-lg p-6 mb-6">
@@ -270,13 +270,85 @@ const Romanos5Diagram = () => {
             </div>
           </div>
 
-          {/* Visual Timeline - FIXED CONTRAST */}
-          <div className="bg-slate-50 p-8 rounded-xl mb-8">
-            <h3 className="text-2xl font-bold text-center text-slate-800 mb-6">
+          {/* Visual Timeline */}
+          <div className="bg-slate-50 p-4 md:p-8 rounded-xl mb-8">
+            <h3 className="text-xl md:text-2xl font-bold text-center text-slate-800 mb-6">
               La Línea de Tiempo Teológica
             </h3>
 
-            <div className="relative">
+            {/* Mobile Timeline - Stacked */}
+            <div className="md:hidden space-y-6">
+              {/* Adam's Sin */}
+              <div className="space-y-3">
+                <div className="bg-red-500 text-white p-4 rounded-lg shadow-lg">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-8 h-8 bg-white text-red-600 rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                    <p className="font-bold text-lg">Caída de Adán</p>
+                  </div>
+                  <p className="text-sm">Génesis 3</p>
+                </div>
+                <div className="bg-red-100 p-4 rounded-lg border-l-4 border-red-500">
+                  <p className="text-sm text-slate-700">
+                    <strong>Resultado inmediato:</strong> Todos sus descendientes 
+                    constituidos pecadores (v. 19)
+                  </p>
+                </div>
+              </div>
+
+              {/* Our Birth */}
+              <div className="space-y-3">
+                <div className="bg-slate-800 text-white p-4 rounded-lg shadow-lg border-2 border-slate-600">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-8 h-8 bg-red-400 text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                    <p className="font-bold text-lg">NOSOTROS</p>
+                  </div>
+                  <p className="text-sm">En estado caído "en Adán"</p>
+                </div>
+                <div className="bg-red-100 p-4 rounded-lg border-l-4 border-red-500">
+                  <p className="text-sm text-slate-700">
+                    <strong>Nacemos:</strong> Ya constituidos pecadores, heredamos 
+                    estado de Adán (Salmo 51:5)
+                  </p>
+                </div>
+              </div>
+
+              {/* Christ's Work */}
+              <div className="space-y-3">
+                <div className="bg-blue-600 text-white p-4 rounded-lg shadow-lg border-2 border-blue-400">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-8 h-8 bg-white text-blue-600 rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                    <p className="font-bold text-lg">Fe en Cristo</p>
+                  </div>
+                  <p className="text-sm">Unión con el Segundo Adán</p>
+                </div>
+                <div className="bg-green-500 text-white p-4 rounded-lg shadow-lg">
+                  <p className="font-bold text-lg">Obra de Cristo</p>
+                  <p className="text-sm">Obediencia perfecta + Muerte expiatoria</p>
+                </div>
+              </div>
+
+              {/* Justification */}
+              <div className="space-y-3">
+                <div className="bg-green-100 p-4 rounded-lg border-l-4 border-green-500">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
+                    <p className="text-sm text-slate-700 font-bold">Justificación</p>
+                  </div>
+                  <p className="text-sm text-slate-700">
+                    <strong>Por fe:</strong> Recibimos justicia de Cristo, 
+                    constituidos justos (v. 19)
+                  </p>
+                </div>
+                <div className="bg-green-100 p-4 rounded-lg border-l-4 border-green-500">
+                  <p className="text-sm text-slate-700">
+                    <strong>Resultado:</strong> Justificación de vida, reinarán en vida (v. 17-18)
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop Timeline - Original Layout */}
+            <div className="hidden md:block relative">
               {/* Timeline Line */}
               <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-slate-300" />
 
@@ -431,8 +503,8 @@ const Romanos5Diagram = () => {
           </div>
 
           {/* Key Verses Breakdown */}
-          <div className="bg-indigo-50 p-6 rounded-xl">
-            <h3 className="text-2xl font-bold text-indigo-900 mb-6 text-center">
+          <div className="bg-indigo-50 p-4 md:p-6 rounded-xl">
+            <h3 className="text-xl md:text-2xl font-bold text-indigo-900 mb-6 text-center">
               📖 Desglose de Versículos Clave
             </h3>
 
@@ -464,14 +536,14 @@ const Romanos5Diagram = () => {
                   point: 'CONSTITUIDOS - declarados, establecidos (no gradualmente desarrollados)'
                 }
               ].map((item, idx) => (
-                <div key={idx} className="bg-white p-5 rounded-lg shadow border-l-4 border-indigo-500">
-                  <div className="flex gap-3">
-                    <div className="bg-indigo-600 text-white px-3 py-1 rounded font-bold text-sm h-fit">
+                <div key={idx} className="bg-white p-4 md:p-5 rounded-lg shadow border-l-4 border-indigo-500">
+                  <div className="flex flex-col md:flex-row gap-3">
+                    <div className="bg-indigo-600 text-white px-3 py-1 rounded font-bold text-sm h-fit self-start">
                       {item.verse}
                     </div>
                     <div className="flex-1">
-                      <p className="text-sm text-slate-600 italic mb-2">{item.text}</p>
-                      <p className="text-sm font-semibold text-indigo-900">
+                      <p className="text-xs md:text-sm text-slate-600 italic mb-2">{item.text}</p>
+                      <p className="text-xs md:text-sm font-semibold text-indigo-900">
                         💡 {item.point}
                       </p>
                     </div>

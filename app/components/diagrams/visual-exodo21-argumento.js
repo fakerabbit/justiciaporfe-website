@@ -3,26 +3,27 @@ import { AlertOctagon, Users, Baby } from 'lucide-react';
 
 const ArgumentoExodo21 = () => {
   return (
-    <div className="w-full max-w-5xl mx-auto p-6">
+    <div className="w-full max-w-5xl mx-auto p-4 md:p-6">
       <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-to-r from-slate-700 to-slate-900 text-white p-6">
+        <div className="bg-gradient-to-r from-slate-700 to-slate-900 text-white p-4 md:p-6">
           <div className="flex items-center justify-center gap-3 mb-3">
-            <AlertOctagon size={32} />
-            <h2 className="text-3xl font-bold text-center">
+            <AlertOctagon size={28} className="md:hidden" />
+            <AlertOctagon size={32} className="hidden md:block" />
+            <h2 className="text-2xl md:text-3xl font-bold text-center">
               El Argumento Devastador
             </h2>
           </div>
-          <p className="text-center text-slate-200 text-lg">
+          <p className="text-center text-slate-200 text-base md:text-lg">
             Éxodo 21:4 + Juan 8:34 = La TUG Colapsa
           </p>
         </div>
 
-        <div className="p-8 space-y-8">
+        <div className="p-4 md:p-8 space-y-6 md:space-y-8">
           {/* The Biblical Law */}
           <div className="bg-amber-50 border-2 border-amber-500 rounded-xl p-6">
-            <h3 className="text-2xl font-bold text-amber-900 mb-4 flex items-center gap-2">
-              <span className="text-3xl">📜</span>
+            <h3 className="text-xl md:text-2xl font-bold text-amber-900 mb-4 flex items-center gap-2">
+              <span className="text-2xl md:text-3xl">📜</span>
               La Ley Civil de Dios sobre Esclavitud
             </h3>
             <div className="bg-white p-5 rounded-lg border-l-4 border-amber-600">
@@ -47,22 +48,22 @@ const ArgumentoExodo21 = () => {
 
           {/* The Logical Chain */}
           <div className="bg-slate-50 p-6 rounded-xl">
-            <h3 className="text-2xl font-bold text-slate-800 mb-6 text-center">
+            <h3 className="text-xl md:text-2xl font-bold text-slate-800 mb-6 text-center">
               La Cadena Lógica Irrefutable
             </h3>
 
             <div className="space-y-4">
               {/* Premise 1 */}
-              <div className="bg-white border-l-4 border-blue-600 p-5 rounded-r-lg shadow">
-                <div className="flex items-start gap-3">
-                  <div className="bg-blue-600 text-white font-bold px-3 py-1 rounded text-sm">
+              <div className="bg-white border-l-4 border-blue-600 p-4 md:p-5 rounded-r-lg shadow">
+                <div className="flex flex-col md:flex-row md:items-start gap-3">
+                  <div className="bg-blue-600 text-white font-bold px-3 py-1 rounded text-sm self-start">
                     PREMISA 1
                   </div>
                   <div className="flex-1">
-                    <p className="font-semibold text-slate-800 mb-2">
+                    <p className="font-semibold text-slate-800 mb-2 text-sm md:text-base">
                       El pecado es esclavitud (estado legal)
                     </p>
-                    <p className="text-sm text-slate-600">
+                    <p className="text-xs md:text-sm text-slate-600">
                       <strong>Juan 8:34:</strong> "Todo aquel que hace pecado, esclavo es del pecado"
                     </p>
                   </div>
@@ -70,16 +71,16 @@ const ArgumentoExodo21 = () => {
               </div>
 
               {/* Premise 2 */}
-              <div className="bg-white border-l-4 border-blue-600 p-5 rounded-r-lg shadow">
-                <div className="flex items-start gap-3">
-                  <div className="bg-blue-600 text-white font-bold px-3 py-1 rounded text-sm">
+              <div className="bg-white border-l-4 border-blue-600 p-4 md:p-5 rounded-r-lg shadow">
+                <div className="flex flex-col md:flex-row md:items-start gap-3">
+                  <div className="bg-blue-600 text-white font-bold px-3 py-1 rounded text-sm self-start">
                     PREMISA 2
                   </div>
                   <div className="flex-1">
-                    <p className="font-semibold text-slate-800 mb-2">
+                    <p className="font-semibold text-slate-800 mb-2 text-sm md:text-base">
                       Adán se convirtió en esclavo del pecado al caer
                     </p>
-                    <p className="text-sm text-slate-600">
+                    <p className="text-xs md:text-sm text-slate-600">
                       <strong>Romanos 5:12:</strong> "Por un hombre el pecado entró en el mundo, 
                       y por el pecado la muerte"
                     </p>
@@ -88,16 +89,16 @@ const ArgumentoExodo21 = () => {
               </div>
 
               {/* Premise 3 */}
-              <div className="bg-white border-l-4 border-amber-600 p-5 rounded-r-lg shadow">
-                <div className="flex items-start gap-3">
-                  <div className="bg-amber-600 text-white font-bold px-3 py-1 rounded text-sm">
+              <div className="bg-white border-l-4 border-amber-600 p-4 md:p-5 rounded-r-lg shadow">
+                <div className="flex flex-col md:flex-row md:items-start gap-3">
+                  <div className="bg-amber-600 text-white font-bold px-3 py-1 rounded text-sm self-start">
                     PREMISA 3
                   </div>
                   <div className="flex-1">
-                    <p className="font-semibold text-slate-800 mb-2">
+                    <p className="font-semibold text-slate-800 mb-2 text-sm md:text-base">
                       Los hijos de esclavos heredan posición legal de esclavitud
                     </p>
-                    <p className="text-sm text-slate-600">
+                    <p className="text-xs md:text-sm text-slate-600">
                       <strong>Éxodo 21:4:</strong> "Los hijos serán de su amo" (heredan esclavitud)
                     </p>
                   </div>
@@ -105,16 +106,16 @@ const ArgumentoExodo21 = () => {
               </div>
 
               {/* Conclusion */}
-              <div className="bg-gradient-to-r from-purple-600 to-purple-700 text-white p-5 rounded-lg shadow-lg">
-                <div className="flex items-start gap-3">
-                  <div className="bg-white text-purple-700 font-bold px-3 py-1 rounded text-sm">
+              <div className="bg-gradient-to-r from-purple-600 to-purple-700 text-white p-4 md:p-5 rounded-lg shadow-lg">
+                <div className="flex flex-col md:flex-row md:items-start gap-3">
+                  <div className="bg-white text-purple-700 font-bold px-3 py-1 rounded text-sm self-start">
                     CONCLUSIÓN
                   </div>
                   <div className="flex-1">
-                    <p className="font-bold text-xl mb-2">
+                    <p className="font-bold text-lg md:text-xl mb-2">
                       Heredamos el estado / la posición legal / la condenación de esclavitud de Adán caído en pecado
                     </p>
-                    <p className="text-sm text-purple-100">
+                    <p className="text-xs md:text-sm text-purple-100">
                       Nacemos como "hijos del esclavo" (Adán) → Heredamos esclavitud al pecado → 
                       Posición legal desde engendramiento y nacimiento, no por actos personales
                     </p>
@@ -126,7 +127,7 @@ const ArgumentoExodo21 = () => {
 
           {/* Visual Diagram */}
           <div className="bg-slate-100 p-6 rounded-xl">
-            <h3 className="text-xl font-bold text-slate-800 mb-6 text-center">
+            <h3 className="text-lg md:text-xl font-bold text-slate-800 mb-6 text-center">
               Representación Visual
             </h3>
             
@@ -152,7 +153,7 @@ const ArgumentoExodo21 = () => {
               </div>
 
               {/* Descendants */}
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="bg-red-500 text-white p-4 rounded-lg text-center shadow">
                   <Baby size={30} className="mx-auto mb-2" />
                   <div className="font-semibold">NOSOTROS</div>
@@ -184,8 +185,8 @@ const ArgumentoExodo21 = () => {
 
           {/* The Dilemma for LGT */}
           <div className="bg-red-50 border-2 border-red-600 rounded-xl p-6">
-            <h3 className="text-2xl font-bold text-red-900 mb-4 flex items-center gap-2">
-              <AlertOctagon className="text-red-600" />
+            <h3 className="text-xl md:text-2xl font-bold text-red-900 mb-4 flex items-center gap-2">
+              <AlertOctagon className="text-red-600 w-6 h-6 md:w-7 md:h-7" />
               El Dilema Inescapable de la TUG
             </h3>
 
@@ -233,7 +234,7 @@ const ArgumentoExodo21 = () => {
 
           {/* The Only Solution */}
           <div className="bg-green-50 border-2 border-green-600 rounded-xl p-6">
-            <h3 className="text-2xl font-bold text-green-900 mb-4">
+            <h3 className="text-xl md:text-2xl font-bold text-green-900 mb-4">
               ✓ La Única Solución Bíblica
             </h3>
             
@@ -268,17 +269,17 @@ const ArgumentoExodo21 = () => {
 
           {/* Bottom Summary */}
           <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-6 rounded-xl">
-            <h3 className="text-xl font-bold mb-3 text-center">
+            <h3 className="text-lg md:text-xl font-bold mb-3 text-center">
               Resumen del Argumento
             </h3>
-            <div className="text-center space-y-2">
+            <div className="text-center space-y-2 text-sm md:text-base">
               <p>Si <strong>Éxodo 21:4</strong> (hijos heredan esclavitud) es ley de Dios</p>
               <p>Y <strong>Juan 8:34</strong> (pecado = esclavitud) es verdad</p>
               <p>Y <strong>TUG</strong> dice (Cristo = nuestra naturaleza exacta)</p>
-              <p className="text-2xl font-bold mt-4 text-yellow-300">
+              <p className="text-xl md:text-2xl font-bold mt-4 text-yellow-300">
                 → Entonces Cristo fue esclavo y NO PUEDE SALVARNOS
               </p>
-              <p className="mt-4 text-purple-100">
+              <p className="mt-4 text-purple-100 text-xs md:text-sm">
                 Por tanto, la TUG es FALSA. Cristo NO tuvo nuestra naturaleza caída exacta.
               </p>
             </div>

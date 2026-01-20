@@ -7,7 +7,7 @@ const ComparacionMaestra = () => {
       categoria: "Naturaleza del Pecado",
       tug: "Pecado es dar rienda suelta a nuestra naturaleza pecaminosa",
       biblico: "El mal que existe en nuestra naturaleza infringe la Ley",
-      simbolos: "🍞 Levadura | 🏥 Lepra | ⛓️ Esclavitud",
+      simbolos: "🍞 Levadura | 🦠 Lepra | ⛓️ Esclavitud",
       errores: "La Ley no condena mi inclinación al mal"
     },
     {
@@ -55,20 +55,20 @@ const ComparacionMaestra = () => {
   ];
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-6 bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="w-full max-w-6xl mx-auto p-4 md:p-6 bg-gradient-to-br from-slate-50 to-blue-50">
       <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-to-r from-red-600 to-red-700 text-white p-6">
-          <h2 className="text-3xl font-bold text-center mb-2">
+        <div className="bg-gradient-to-r from-red-600 to-red-700 text-white p-4 md:p-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">
             Comparación Teológica Completa
           </h2>
-          <p className="text-center text-red-100">
+          <p className="text-sm md:text-base text-center text-red-100">
             TUG vs. Enseñanza Bíblica sobre el Pecado y la Salvación
           </p>
         </div>
 
-        {/* Column Headers */}
-        <div className="grid grid-cols-3 gap-4 p-6 bg-slate-100 border-b-2 border-slate-300">
+        {/* Desktop Column Headers - Hidden on mobile */}
+        <div className="hidden md:grid grid-cols-3 gap-4 p-6 bg-slate-100 border-b-2 border-slate-300">
           <div className="font-bold text-center text-slate-700">
             Aspecto Teológico
           </div>
@@ -85,29 +85,66 @@ const ComparacionMaestra = () => {
         {/* Comparison Rows */}
         <div className="divide-y divide-slate-200">
           {comparisons.map((item, index) => (
-            <div 
-              key={index}
-              className="grid grid-cols-3 gap-4 p-6 hover:bg-slate-50 transition-colors"
-            >
-              {/* Category */}
-              <div className="font-semibold text-slate-800 flex items-center">
-                <div className="w-2 h-2 bg-blue-600 rounded-full mr-3" />
-                {item.categoria}
-              </div>
-              
-              {/* TUG Position */}
-              <div className="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
-                <p className="text-slate-700 mb-2">{item.tug}</p>
-                <div className="text-xs text-red-600 font-medium">
-                  {item.errores}
+            <div key={index}>
+              {/* Mobile Layout - Stacked */}
+              <div className="md:hidden p-4 space-y-4">
+                {/* Category Header */}
+                <div className="font-bold text-lg text-slate-800 flex items-center pb-2 border-b-2 border-blue-600">
+                  <div className="w-2 h-2 bg-blue-600 rounded-full mr-3" />
+                  {item.categoria}
+                </div>
+                
+                {/* TUG Position */}
+                <div>
+                  <div className="font-semibold text-red-700 flex items-center gap-2 mb-2">
+                    <X size={18} />
+                    <span>Teología de la Última Generación</span>
+                  </div>
+                  <div className="bg-red-50 p-3 rounded-lg border-l-4 border-red-500">
+                    <p className="text-slate-700 mb-2 text-sm">{item.tug}</p>
+                    <div className="text-xs text-red-600 font-medium italic">
+                      ❌ {item.errores}
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Biblical Position */}
+                <div>
+                  <div className="font-semibold text-green-700 flex items-center gap-2 mb-2">
+                    <Check size={18} />
+                    <span>Enseñanza Bíblica</span>
+                  </div>
+                  <div className="bg-green-50 p-3 rounded-lg border-l-4 border-green-500">
+                    <p className="text-slate-700 mb-2 text-sm">{item.biblico}</p>
+                    <div className="text-xs text-green-600 font-medium">
+                      ✓ {item.simbolos}
+                    </div>
+                  </div>
                 </div>
               </div>
-              
-              {/* Biblical Position */}
-              <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
-                <p className="text-slate-700 mb-2">{item.biblico}</p>
-                <div className="text-xs text-green-600 font-medium">
-                  {item.simbolos}
+
+              {/* Desktop Layout - Grid */}
+              <div className="hidden md:grid grid-cols-3 gap-4 p-6 hover:bg-slate-50 transition-colors">
+                {/* Category */}
+                <div className="font-semibold text-slate-800 flex items-center">
+                  <div className="w-2 h-2 bg-blue-600 rounded-full mr-3" />
+                  {item.categoria}
+                </div>
+                
+                {/* TUG Position */}
+                <div className="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+                  <p className="text-slate-700 mb-2">{item.tug}</p>
+                  <div className="text-xs text-red-600 font-medium">
+                    {item.errores}
+                  </div>
+                </div>
+                
+                {/* Biblical Position */}
+                <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                  <p className="text-slate-700 mb-2">{item.biblico}</p>
+                  <div className="text-xs text-green-600 font-medium">
+                    {item.simbolos}
+                  </div>
                 </div>
               </div>
             </div>
@@ -115,12 +152,12 @@ const ComparacionMaestra = () => {
         </div>
 
         {/* Footer with Key */}
-        <div className="bg-slate-100 p-6 border-t-2 border-slate-300">
-          <div className="flex items-start gap-2 text-sm text-slate-600">
+        <div className="bg-slate-100 p-4 md:p-6 border-t-2 border-slate-300">
+          <div className="flex items-start gap-2 text-xs md:text-sm text-slate-600">
             <AlertCircle size={20} className="text-blue-600 flex-shrink-0 mt-1" />
             <div>
               <strong>Símbolos Bíblicos:</strong> 🍞 Levadura (corrupción permeante) | 
-              🏥 Lepra (estado de impureza) | ⛓️ Esclavitud (posición legal heredada)
+              🦠 Lepra (estado de impureza) | ⛓️ Esclavitud (posición legal heredada)
             </div>
           </div>
         </div>

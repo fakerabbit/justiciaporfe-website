@@ -5,14 +5,14 @@ const Corintios15Diagram = () => {
   const [hoveredSection, setHoveredSection] = useState(null);
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-6">
+    <div className="w-full max-w-6xl mx-auto p-4 md:p-6">
       <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-to-r from-slate-700 to-slate-900 text-white p-6">
-          <h2 className="text-3xl font-bold text-center mb-2">
+        <div className="bg-gradient-to-r from-slate-700 to-slate-900 text-white p-4 md:p-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">
             1 Corintios 15:22
           </h2>
-          <p className="text-center text-slate-200 text-xl italic">
+          <p className="text-center text-slate-200 text-lg md:text-xl italic">
             "Porque así como en Adán todos mueren,
             <br />
             también en Cristo todos serán vivificados."
@@ -20,14 +20,14 @@ const Corintios15Diagram = () => {
         </div>
 
         {/* Key Concept Banner */}
-        <div className="bg-blue-50 border-b-2 border-blue-200 p-6">
+        <div className="bg-blue-50 border-b-2 border-blue-200 p-4 md:p-6">
           <div className="flex items-start gap-3 max-w-4xl mx-auto">
-            <Info className="text-blue-600 flex-shrink-0 mt-1" size={24} />
+            <Info className="text-blue-600 flex-shrink-0 mt-1" size={20} />
             <div>
-              <h3 className="font-bold text-blue-900 mb-2 text-lg">
+              <h3 className="font-bold text-blue-900 mb-2 text-base md:text-lg">
                 Concepto Clave: Unión Representativa
               </h3>
-              <p className="text-slate-700">
+              <p className="text-sm md:text-base text-slate-700">
                 Las palabras <strong>"en Adán"</strong> y <strong>"en Cristo"</strong> no son 
                 meramente descriptivas—representan <strong>unión legal y vital</strong> con un 
                 representante. Estar "en" alguien significa estar bajo su representación, heredar 
@@ -37,7 +37,7 @@ const Corintios15Diagram = () => {
           </div>
         </div>
 
-        <div className="p-8">
+        <div className="p-4 md:p-8">
           {/* The Two Unions - Side by Side */}
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {/* IN ADAM */}
@@ -331,107 +331,107 @@ const Corintios15Diagram = () => {
           </div>
 
           {/* Biblical Support */}
-          <div className="bg-indigo-50 p-8 rounded-2xl mb-12">
-            <h3 className="text-2xl font-bold text-center text-indigo-900 mb-8">
+          <div className="bg-indigo-50 p-4 md:p-8 rounded-2xl mb-12">
+            <h3 className="text-xl md:text-2xl font-bold text-center text-indigo-900 mb-6 md:mb-8">
               📖 Otros Textos Sobre "En Adán" / "En Cristo"
             </h3>
 
             <div className="space-y-4">
-              <div className="bg-white p-5 rounded-xl shadow border-l-4 border-red-500">
-                <div className="flex items-start gap-3">
-                  <div className="bg-red-500 text-white px-3 py-1 rounded font-bold text-sm">
+              <div className="bg-white p-4 md:p-5 rounded-xl shadow border-l-4 border-red-500">
+                <div className="flex flex-col md:flex-row md:items-start gap-3">
+                  <div className="bg-red-500 text-white px-3 py-1 rounded font-bold text-sm self-start">
                     EN ADÁN
                   </div>
                   <div className="flex-1">
-                    <p className="font-semibold text-slate-800 mb-2">
+                    <p className="font-semibold text-slate-800 mb-2 text-sm md:text-base">
                       Romanos 5:12
                     </p>
-                    <p className="text-sm text-slate-600 italic mb-2">
+                    <p className="text-xs md:text-sm text-slate-600 italic mb-2">
                       "Por tanto, como el pecado entró en el mundo por un hombre, y por el 
                       pecado la muerte, así la muerte pasó a todos los hombres, por cuanto 
                       todos pecaron"
                     </p>
-                    <p className="text-sm text-red-800 font-semibold">
+                    <p className="text-xs md:text-sm text-red-800 font-semibold">
                       → Todos pecaron "en Adán" (tiempo aoristo - acción puntual pasada)
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white p-5 rounded-xl shadow border-l-4 border-green-500">
-                <div className="flex items-start gap-3">
-                  <div className="bg-green-500 text-white px-3 py-1 rounded font-bold text-sm">
+              <div className="bg-white p-4 md:p-5 rounded-xl shadow border-l-4 border-green-500">
+                <div className="flex flex-col md:flex-row md:items-start gap-3">
+                  <div className="bg-green-500 text-white px-3 py-1 rounded font-bold text-sm self-start">
                     EN CRISTO
                   </div>
                   <div className="flex-1">
-                    <p className="font-semibold text-slate-800 mb-2">
+                    <p className="font-semibold text-slate-800 mb-2 text-sm md:text-base">
                       2 Corintios 5:17
                     </p>
-                    <p className="text-sm text-slate-600 italic mb-2">
+                    <p className="text-xs md:text-sm text-slate-600 italic mb-2">
                       "De modo que si alguno está en Cristo, nueva criatura es; las cosas 
                       viejas pasaron; he aquí todas son hechas nuevas"
                     </p>
-                    <p className="text-sm text-green-800 font-semibold">
+                    <p className="text-xs md:text-sm text-green-800 font-semibold">
                       → Estar "en Cristo" = transformación total de estado
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white p-5 rounded-xl shadow border-l-4 border-green-500">
-                <div className="flex items-start gap-3">
-                  <div className="bg-green-500 text-white px-3 py-1 rounded font-bold text-sm">
+              <div className="bg-white p-4 md:p-5 rounded-xl shadow border-l-4 border-green-500">
+                <div className="flex flex-col md:flex-row md:items-start gap-3">
+                  <div className="bg-green-500 text-white px-3 py-1 rounded font-bold text-sm self-start">
                     EN CRISTO
                   </div>
                   <div className="flex-1">
-                    <p className="font-semibold text-slate-800 mb-2">
+                    <p className="font-semibold text-slate-800 mb-2 text-sm md:text-base">
                       Efesios 1:3-4
                     </p>
-                    <p className="text-sm text-slate-600 italic mb-2">
+                    <p className="text-xs md:text-sm text-slate-600 italic mb-2">
                       "Bendito sea el Dios y Padre de nuestro Señor Jesucristo, que nos 
                       bendijo con toda bendición espiritual en los lugares celestiales en Cristo, 
                       según nos escogió en él antes de la fundación del mundo"
                     </p>
-                    <p className="text-sm text-green-800 font-semibold">
+                    <p className="text-xs md:text-sm text-green-800 font-semibold">
                       → Todas las bendiciones vienen por estar "en Cristo"
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white p-5 rounded-xl shadow border-l-4 border-green-500">
-                <div className="flex items-start gap-3">
-                  <div className="bg-green-500 text-white px-3 py-1 rounded font-bold text-sm">
+              <div className="bg-white p-4 md:p-5 rounded-xl shadow border-l-4 border-green-500">
+                <div className="flex flex-col md:flex-row md:items-start gap-3">
+                  <div className="bg-green-500 text-white px-3 py-1 rounded font-bold text-sm self-start">
                     EN CRISTO
                   </div>
                   <div className="flex-1">
-                    <p className="font-semibold text-slate-800 mb-2">
+                    <p className="font-semibold text-slate-800 mb-2 text-sm md:text-base">
                       Romanos 8:1
                     </p>
-                    <p className="text-sm text-slate-600 italic mb-2">
+                    <p className="text-xs md:text-sm text-slate-600 italic mb-2">
                       "Ahora, pues, ninguna condenación hay para los que están en Cristo Jesús"
                     </p>
-                    <p className="text-sm text-green-800 font-semibold">
+                    <p className="text-xs md:text-sm text-green-800 font-semibold">
                       → Estar "en Cristo" = liberación de condenación
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white p-5 rounded-xl shadow border-l-4 border-green-500">
-                <div className="flex items-start gap-3">
-                  <div className="bg-green-500 text-white px-3 py-1 rounded font-bold text-sm">
+              <div className="bg-white p-4 md:p-5 rounded-xl shadow border-l-4 border-green-500">
+                <div className="flex flex-col md:flex-row md:items-start gap-3">
+                  <div className="bg-green-500 text-white px-3 py-1 rounded font-bold text-sm self-start">
                     EN CRISTO
                   </div>
                   <div className="flex-1">
-                    <p className="font-semibold text-slate-800 mb-2">
+                    <p className="font-semibold text-slate-800 mb-2 text-sm md:text-base">
                       Gálatas 3:28
                     </p>
-                    <p className="text-sm text-slate-600 italic mb-2">
+                    <p className="text-xs md:text-sm text-slate-600 italic mb-2">
                       "Ya no hay judío ni griego; no hay esclavo ni libre; no hay varón ni 
                       mujer; porque todos vosotros sois uno en Cristo Jesús"
                     </p>
-                    <p className="text-sm text-green-800 font-semibold">
+                    <p className="text-xs md:text-sm text-green-800 font-semibold">
                       → Estar "en Cristo" = nueva identidad que trasciende todas las divisiones
                     </p>
                   </div>
