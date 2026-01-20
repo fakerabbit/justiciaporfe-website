@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Users, Skull, Heart, ArrowRight, Circle, Info } from 'lucide-react';
+import PDFExportButton from '../PDFExportButton';
 
 const Corintios15Diagram = () => {
   const [hoveredSection, setHoveredSection] = useState(null);
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-4 md:p-6">
+    <div id="visual-corintios15-diagram" className="w-full max-w-6xl mx-auto p-4 md:p-6">
       <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
         {/* Header */}
         <div className="bg-gradient-to-r from-slate-700 to-slate-900 text-white p-4 md:p-6">
@@ -587,6 +588,12 @@ const Corintios15Diagram = () => {
           </div>
         </div>
       </div>
+      <PDFExportButton 
+        className="flex items-center gap-2 mb-2"
+        elementId="visual-corintios15-diagram"
+        filename="en-adan-en-cristo.pdf"
+        position="top"
+      />
     </div>
   );
 };

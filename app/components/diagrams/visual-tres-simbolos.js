@@ -1,5 +1,6 @@
 import React from 'react';
 import { Info } from 'lucide-react';
+import PDFExportButton from '../PDFExportButton';
 
 const TresSimbolos = () => {
   const symbols = [
@@ -105,7 +106,7 @@ const TresSimbolos = () => {
   ];
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-6 space-y-6">
+    <div id="visual-tres-simbolos" className="w-full max-w-6xl mx-auto p-6 space-y-6">
       <div className="text-center mb-8">
         <h2 className="text-4xl font-bold text-slate-800 mb-3">
           Tres Símbolos Bíblicos del Pecado
@@ -229,6 +230,12 @@ const TresSimbolos = () => {
           <strong>Conclusión:</strong> En cada caso, necesitamos una INTERVENCIÓN DIVINA, no perfeccionamiento humano
         </div>
       </div>
+      <PDFExportButton 
+        className="flex items-center gap-2 mb-2"
+        elementId="visual-tres-simbolos"
+        filename="3-simbolos-pecado.pdf"
+        position="top"
+      />
     </div>
   );
 };

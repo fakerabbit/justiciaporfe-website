@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BookOpen, Filter, BarChart3, AlertTriangle, CheckCircle, Info } from 'lucide-react';
+import PDFExportButton from '../PDFExportButton';
 
 const TeleiosComprehensive = () => {
   // Initialize state from sessionStorage if available
@@ -248,7 +249,7 @@ const TeleiosComprehensive = () => {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-6">
+    <div id="visual-teleios-comprehensive" className="w-full max-w-6xl mx-auto p-6">
       <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
         {/* Header */}
         <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white p-6">
@@ -520,6 +521,12 @@ const TeleiosComprehensive = () => {
           </div>
         </div>
       </div>
+      <PDFExportButton 
+        className="flex items-center gap-2 mb-2"
+        elementId="visual-teleios-comprehensive"
+        filename="perfeccion-nt.pdf"
+        position="top"
+      />
     </div>
   );
 };

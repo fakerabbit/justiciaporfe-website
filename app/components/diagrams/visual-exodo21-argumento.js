@@ -1,9 +1,10 @@
 import React from 'react';
 import { AlertOctagon, Users, Baby } from 'lucide-react';
+import PDFExportButton from '../PDFExportButton';
 
 const ArgumentoExodo21 = () => {
   return (
-    <div className="w-full max-w-5xl mx-auto p-4 md:p-6">
+    <div id="visual-exodo21-argumento" className="w-full max-w-5xl mx-auto p-4 md:p-6">
       <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
         {/* Header */}
         <div className="bg-gradient-to-r from-slate-700 to-slate-900 text-white p-4 md:p-6">
@@ -286,6 +287,12 @@ const ArgumentoExodo21 = () => {
           </div>
         </div>
       </div>
+      <PDFExportButton 
+        className="flex items-center gap-2 mb-2"
+        elementId="visual-exodo21-argumento"
+        filename="herencia-esclavitud.pdf"
+        position="top"
+      />
     </div>
   );
 };

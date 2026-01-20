@@ -1,9 +1,10 @@
 import React from 'react';
 import { Calendar, Shield, Flame, Crown, AlertCircle, CheckCircle, X } from 'lucide-react';
+import PDFExportButton from '../PDFExportButton';
 
 const CuandoPerfeccionDiagram = () => {
   return (
-    <div className="w-full max-w-6xl mx-auto p-6 bg-gradient-to-br from-slate-50 to-blue-50">
+    <div id="visual-cuando-perfeccion" className="w-full max-w-6xl mx-auto p-6 bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Header */}
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-slate-800 mb-3">
@@ -617,6 +618,12 @@ const CuandoPerfeccionDiagram = () => {
           </p>
         </div>
       </div>
+      <PDFExportButton 
+        className="flex items-center gap-2 mb-2"
+        elementId="visual-cuando-perfeccion"
+        filename="cuando-alcanzar-perfeccion.pdf"
+        position="top"
+      />
     </div>
   );
 };

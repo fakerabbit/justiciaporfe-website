@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Users, TrendingDown, TrendingUp, Scale, AlertCircle } from 'lucide-react';
+import PDFExportButton from '../PDFExportButton';
 
 const Romanos5Diagram = () => {
   const [selectedSide, setSelectedSide] = useState(null); // 'adam' or 'christ'
 
   return (
-    <div className="w-full max-w-7xl mx-auto p-4 md:p-6">
+    <div id="visual-romanos5-diagram" className="w-full max-w-7xl mx-auto p-4 md:p-6">
       <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
         {/* Header */}
         <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-4 md:p-6">
@@ -554,6 +555,12 @@ const Romanos5Diagram = () => {
           </div>
         </div>
       </div>
+      <PDFExportButton 
+        className="flex items-center gap-2 mb-2"
+        elementId="visual-romanos5-diagram"
+        filename="dos-adanes.pdf"
+        position="top"
+      />
     </div>
   );
 };

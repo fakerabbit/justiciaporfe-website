@@ -1,9 +1,10 @@
 import React from 'react';
 import { ArrowRight, AlertTriangle, CheckCircle } from 'lucide-react';
+import PDFExportButton from '../PDFExportButton';
 
 const OrdenSantuario = () => {
   return (
-    <div className="w-full max-w-6xl mx-auto p-4 md:p-6 space-y-8">
+    <div id="visual-orden-santuario" className="w-full max-w-6xl mx-auto p-4 md:p-6 space-y-8">
       {/* Header */}
       <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-4 md:p-6 rounded-xl shadow-2xl">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">
@@ -290,6 +291,12 @@ const OrdenSantuario = () => {
           </div>
         </div>
       </div>
+      <PDFExportButton 
+        className="flex items-center gap-2 mb-2"
+        elementId="visual-orden-santuario"
+        filename="el-orden-santuario.pdf"
+        position="top"
+      />
     </div>
   );
 };

@@ -2,12 +2,13 @@
 
 import React, { useState } from 'react';
 import { Building, Droplet, Flame, Book, User, Scale, Check, X, Info } from 'lucide-react';
+import PDFExportButton from '../PDFExportButton';
 
 const SanctaurioJustificacionDiagram = () => {
   const [hoveredElement, setHoveredElement] = useState(null);
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-4 md:p-6 bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl shadow-2xl">
+    <div id="visual-santuario-justificacion" className="w-full max-w-6xl mx-auto p-4 md:p-6 bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl shadow-2xl">
       {/* Header */}
       <div className="text-center mb-8 md:mb-12">
         <div className="flex items-center justify-center gap-3 mb-4">
@@ -74,6 +75,12 @@ const SanctaurioJustificacionDiagram = () => {
           </div>
         </div>
       </div>
+      <PDFExportButton 
+        className="flex items-center gap-2 mb-2"
+        elementId="visual-santuario-justificacion"
+        filename="santuario-justificacion.pdf"
+        position="top"
+      />
     </div>
   );
 };

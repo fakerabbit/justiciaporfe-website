@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Scale, ArrowRight, AlertTriangle, CheckCircle, Heart, Zap } from 'lucide-react';
+import PDFExportButton from '../PDFExportButton';
 
 const DosPerfecciones = () => {
   const [hoveredSide, setHoveredSide] = useState(null);
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-6">
+    <div id="visual-two-perfections" className="w-full max-w-6xl mx-auto p-6">
       <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
         {/* Header */}
         <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-6">
@@ -500,6 +501,12 @@ const DosPerfecciones = () => {
           </div>
         </div>
       </div>
+      <PDFExportButton 
+        className="flex items-center gap-2 mb-2"
+        elementId="visual-two-perfections"
+        filename="dos-perfecciones.pdf"
+        position="top"
+      />
     </div>
   );
 };

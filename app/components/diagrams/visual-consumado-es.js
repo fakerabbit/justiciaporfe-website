@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { CheckCircle, XCircle, AlertTriangle, Crown, Scale, Shield, Scroll, Hammer, Award, Heart, ArrowRight, BookOpen, Zap } from 'lucide-react';
+import PDFExportButton from '../PDFExportButton';
 
 const TetelestalDiagram = () => {
   const [activeSection, setActiveSection] = useState(null);
 
   return (
-    <div className="w-full max-w-7xl mx-auto p-8 bg-gradient-to-br from-slate-50 to-blue-50">
+    <div id="visual-consumado-es" className="w-full max-w-7xl mx-auto p-8 bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Header */}
       <div className="text-center mb-12">
         <div className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-2xl shadow-2xl mb-6">
@@ -721,6 +722,12 @@ const TetelestalDiagram = () => {
           JusticiaPorFe.com - Defendiendo la justificación por fe sola
         </p>
       </div>
+      <PDFExportButton 
+        className="flex items-center gap-2 mb-2"
+        elementId="visual-consumado-es"
+        filename="consumado-es-verdad-biblica.pdf"
+        position="top"
+      />
     </div>
   );
 };

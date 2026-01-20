@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Scale, AlertTriangle, CheckCircle, Heart, Zap, ArrowRight, Info } from 'lucide-react';
+import PDFExportButton from '../PDFExportButton';
 
 const Romanos213Contexto = () => {
   const [activeSection, setActiveSection] = useState(null);
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-6">
+    <div id="visual-romanos213" className="w-full max-w-6xl mx-auto p-6">
       <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
         {/* Header */}
         <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-6">
@@ -579,6 +580,12 @@ const Romanos213Contexto = () => {
           </div>
         </div>
       </div>
+      <PDFExportButton 
+        className="flex items-center gap-2 mb-2"
+        elementId="visual-romanos213"
+        filename="romanos-2-13.pdf"
+        position="top"
+      />
     </div>
   );
 };

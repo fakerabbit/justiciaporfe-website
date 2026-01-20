@@ -1,5 +1,6 @@
 import React from 'react';
 import { Target, TrendingUp, Users, Award, Info, Zap } from 'lucide-react';
+import PDFExportButton from '../PDFExportButton';
 
 const TelosTeleios = () => {
   const concepts = [
@@ -93,7 +94,7 @@ const TelosTeleios = () => {
   ];
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-6">
+    <div id="visual-telos-teleios" className="w-full max-w-6xl mx-auto p-6">
       <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
         {/* Header */}
         <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white p-6">
@@ -538,6 +539,12 @@ const TelosTeleios = () => {
           </div>
         </div>
       </div>
+      <PDFExportButton 
+        className="flex items-center gap-2 mb-2"
+        elementId="visual-telos-teleios"
+        filename="perfeccion-proposito-cumplimiento.pdf"
+        position="top"
+      />
     </div>
   );
 };
