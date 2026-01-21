@@ -58,22 +58,22 @@ const Romanos213Contexto = () => {
             </h3>
 
             <div className="relative">
-              {/* Vertical Timeline Line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-slate-300" />
+              {/* Vertical Timeline Line - hidden on mobile */}
+              <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-slate-300" />
 
               {/* Step 1: Gentiles Condemned */}
-              <div className="flex items-center mb-12">
-                <div className="w-1/2 pr-8 text-right">
-                  <div className="bg-red-500 text-white p-5 rounded-xl inline-block shadow-lg">
-                    <p className="font-bold text-lg mb-2">Romanos 1:18-32</p>
+              <div className="flex flex-col md:flex-row items-center md:items-center mb-8 md:mb-12">
+                <div className="w-full md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0">
+                  <div className="bg-red-500 text-white p-4 md:p-5 rounded-xl inline-block shadow-lg w-full md:w-auto">
+                    <p className="font-bold text-base md:text-lg mb-2">Romanos 1:18-32</p>
                     <p className="text-sm">Los gentiles son CULPABLES</p>
                   </div>
                 </div>
-                <div className="w-12 h-12 bg-red-600 rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center text-white font-bold">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-red-600 rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center text-white font-bold flex-shrink-0 my-3 md:my-0">
                   1
                 </div>
-                <div className="w-1/2 pl-8">
-                  <div className="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+                <div className="w-full md:w-1/2 md:pl-8 mt-4 md:mt-0">
+                  <div className="bg-red-50 p-3 md:p-4 rounded-lg border-l-4 border-red-500">
                     <p className="text-sm text-slate-700">
                       Tienen conciencia, pero la ignoran. Sin excusa ante Dios.
                     </p>
@@ -82,20 +82,20 @@ const Romanos213Contexto = () => {
               </div>
 
               {/* Step 2: Jews Condemned */}
-              <div className="flex items-center mb-12">
-                <div className="w-1/2 pr-8 text-right">
-                  <div className="bg-red-50 p-4 rounded-lg border-r-4 border-red-500 inline-block">
+              <div className="flex flex-col md:flex-row items-center md:items-center mb-8 md:mb-12">
+                <div className="w-full md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0">
+                  <div className="bg-red-50 p-3 md:p-4 rounded-lg border-l-4 md:border-l-0 md:border-r-4 border-red-500 w-full md:w-auto md:inline-block">
                     <p className="text-sm text-slate-700">
                       Tienen la Ley, pero no la obedecen. También culpables.
                     </p>
                   </div>
                 </div>
-                <div className="w-12 h-12 bg-red-600 rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center text-white font-bold">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-red-600 rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center text-white font-bold flex-shrink-0 my-3 md:my-0">
                   2
                 </div>
-                <div className="w-1/2 pl-8">
-                  <div className="bg-red-500 text-white p-5 rounded-xl shadow-lg inline-block">
-                    <p className="font-bold text-lg mb-2">Romanos 2:17-29</p>
+                <div className="w-full md:w-1/2 md:pl-8 mt-4 md:mt-0">
+                  <div className="bg-red-500 text-white p-4 md:p-5 rounded-xl shadow-lg w-full md:w-auto md:inline-block">
+                    <p className="font-bold text-base md:text-lg mb-2">Romanos 2:17-29</p>
                     <p className="text-sm">Los judíos son CULPABLES</p>
                   </div>
                 </div>
@@ -103,26 +103,26 @@ const Romanos213Contexto = () => {
 
               {/* Step 3: THE STANDARD - Romans 2:13 */}
               <div 
-                className="flex items-center mb-12"
+                className="flex flex-col md:flex-row items-center md:items-center mb-8 md:mb-12"
                 onMouseEnter={() => setActiveSection('standard')}
                 onMouseLeave={() => setActiveSection(null)}
               >
-                <div className="w-1/2 pr-8 text-right">
-                  <div className={`bg-gradient-to-r from-yellow-400 to-amber-500 text-slate-900 p-6 rounded-xl inline-block shadow-xl border-4 transition-all ${
+                <div className="w-full md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0">
+                  <div className={`bg-gradient-to-r from-yellow-400 to-amber-500 text-slate-900 p-4 md:p-6 rounded-xl shadow-xl border-4 transition-all w-full md:w-auto md:inline-block ${
                     activeSection === 'standard' ? 'border-amber-700 scale-105' : 'border-amber-600'
                   }`}>
-                    <p className="font-bold text-xl mb-2">⚖️ LA NORMA</p>
-                    <p className="font-bold text-lg mb-3">Romanos 2:13</p>
-                    <p className="text-sm bg-amber-700 text-white p-3 rounded-lg font-semibold border border-amber-900">
+                    <p className="font-bold text-lg md:text-xl mb-2">⚖️ LA NORMA</p>
+                    <p className="font-bold text-base md:text-lg mb-3">Romanos 2:13</p>
+                    <p className="text-xs md:text-sm bg-amber-700 text-white p-2 md:p-3 rounded-lg font-semibold border border-amber-900">
                       "Los <strong>HACEDORES</strong> de la ley serán justificados"
                     </p>
                   </div>
                 </div>
-                <div className="w-12 h-12 bg-amber-500 rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center text-slate-900 font-bold">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-amber-500 rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center text-slate-900 font-bold flex-shrink-0 my-3 md:my-0 text-lg md:text-xl">
                   ⚖️
                 </div>
-                <div className="w-1/2 pl-8">
-                  <div className="bg-amber-50 p-5 rounded-lg border-l-4 border-amber-500">
+                <div className="w-full md:w-1/2 md:pl-8 mt-4 md:mt-0">
+                  <div className="bg-amber-50 p-4 md:p-5 rounded-lg border-l-4 border-amber-500">
                     <p className="text-sm text-slate-700 mb-2">
                       <strong>Pablo establece el estándar:</strong>
                     </p>
@@ -137,9 +137,9 @@ const Romanos213Contexto = () => {
               </div>
 
               {/* Step 4: ALL Condemned */}
-              <div className="flex items-center mb-12">
-                <div className="w-1/2 pr-8 text-right">
-                  <div className="bg-red-50 p-4 rounded-lg border-r-4 border-red-600 inline-block">
+              <div className="flex flex-col md:flex-row items-center md:items-center mb-8 md:mb-12">
+                <div className="w-full md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0">
+                  <div className="bg-red-50 p-3 md:p-4 rounded-lg border-l-4 md:border-l-0 md:border-r-4 border-red-600 w-full md:w-auto md:inline-block">
                     <p className="text-sm text-slate-700 mb-2">
                       <strong>"No hay justo, ni aun uno"</strong>
                     </p>
@@ -148,33 +148,33 @@ const Romanos213Contexto = () => {
                     </p>
                   </div>
                 </div>
-                <div className="w-12 h-12 bg-red-700 rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center text-white font-bold">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-red-700 rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center text-white font-bold flex-shrink-0 my-3 md:my-0 text-lg md:text-xl">
                   ❌
                 </div>
-                <div className="w-1/2 pl-8">
-                  <div className="bg-red-600 text-white p-5 rounded-xl shadow-lg inline-block">
-                    <p className="font-bold text-lg mb-2">Romanos 3:9-20</p>
+                <div className="w-full md:w-1/2 md:pl-8 mt-4 md:mt-0">
+                  <div className="bg-red-600 text-white p-4 md:p-5 rounded-xl shadow-lg w-full md:w-auto md:inline-block">
+                    <p className="font-bold text-base md:text-lg mb-2">Romanos 3:9-20</p>
                     <p className="text-sm">TODOS son CULPABLES</p>
                   </div>
                 </div>
               </div>
 
               {/* Step 5: The Verdict */}
-              <div className="flex items-center mb-12">
-                <div className="w-1/2 pr-8 text-right">
-                  <div className="bg-slate-900 text-white p-5 rounded-xl shadow-xl inline-block">
-                    <p className="font-bold text-lg mb-2">Romanos 3:20</p>
+              <div className="flex flex-col md:flex-row items-center md:items-center mb-8 md:mb-12">
+                <div className="w-full md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0">
+                  <div className="bg-slate-900 text-white p-4 md:p-5 rounded-xl shadow-xl w-full md:w-auto md:inline-block">
+                    <p className="font-bold text-base md:text-lg mb-2">Romanos 3:20</p>
                     <p className="text-sm mb-3">EL VEREDICTO</p>
-                    <p className="text-sm bg-red-800 p-3 rounded font-semibold border border-red-500">
+                    <p className="text-xs md:text-sm bg-red-800 p-2 md:p-3 rounded font-semibold border border-red-500">
                       "Por las obras de la ley NINGÚN ser humano será justificado"
                     </p>
                   </div>
                 </div>
-                <div className="w-12 h-12 bg-slate-800 rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center text-white font-bold">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-slate-800 rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center text-white font-bold flex-shrink-0 my-3 md:my-0">
                   4
                 </div>
-                <div className="w-1/2 pl-8">
-                  <div className="bg-slate-100 p-4 rounded-lg border-l-4 border-slate-700">
+                <div className="w-full md:w-1/2 md:pl-8 mt-4 md:mt-0">
+                  <div className="bg-slate-100 p-3 md:p-4 rounded-lg border-l-4 border-slate-700">
                     <p className="text-sm text-slate-700 font-semibold">
                       La norma de Rom 2:13 es IMPOSIBLE de cumplir.
                     </p>
@@ -186,9 +186,9 @@ const Romanos213Contexto = () => {
               </div>
 
               {/* Step 6: BUT NOW - The Solution */}
-              <div className="flex items-center">
-                <div className="w-1/2 pr-8 text-right">
-                  <div className="bg-green-50 p-4 rounded-lg border-r-4 border-green-500 inline-block">
+              <div className="flex flex-col md:flex-row items-center md:items-center">
+                <div className="w-full md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0">
+                  <div className="bg-green-50 p-3 md:p-4 rounded-lg border-l-4 md:border-l-0 md:border-r-4 border-green-500 w-full md:w-auto md:inline-block">
                     <p className="text-sm text-slate-700 mb-2">
                       <strong>"Pero AHORA"</strong> - La solución de Dios
                     </p>
@@ -197,14 +197,14 @@ const Romanos213Contexto = () => {
                     </p>
                   </div>
                 </div>
-                <div className="w-12 h-12 bg-green-600 rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center text-white font-bold">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-green-600 rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center text-white font-bold flex-shrink-0 my-3 md:my-0 text-lg md:text-xl">
                   ✓
                 </div>
-                <div className="w-1/2 pl-8">
-                  <div className="bg-gradient-to-r from-green-500 to-green-700 text-white p-5 rounded-xl shadow-lg inline-block">
-                    <p className="font-bold text-lg mb-2">Romanos 3:21-28</p>
+                <div className="w-full md:w-1/2 md:pl-8 mt-4 md:mt-0">
+                  <div className="bg-gradient-to-r from-green-500 to-green-700 text-white p-4 md:p-5 rounded-xl shadow-lg w-full md:w-auto md:inline-block">
+                    <p className="font-bold text-base md:text-lg mb-2">Romanos 3:21-28</p>
                     <p className="text-sm mb-3">JUSTIFICACIÓN POR FE</p>
-                    <p className="text-sm bg-green-900 bg-opacity-80 p-3 rounded font-semibold border border-green-400">
+                    <p className="text-xs md:text-sm bg-green-900 bg-opacity-80 p-2 md:p-3 rounded font-semibold border border-green-400">
                       "Justificados gratuitamente... mediante la fe en Cristo"
                     </p>
                   </div>
