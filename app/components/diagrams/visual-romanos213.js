@@ -95,7 +95,7 @@ const Romanos213Contexto = () => {
                 </div>
                 <div className="w-1/2 pl-8">
                   <div className="bg-red-500 text-white p-5 rounded-xl shadow-lg inline-block">
-                    <p className="font-bold text-lg mb-2">Romanos 2:1-3:8</p>
+                    <p className="font-bold text-lg mb-2">Romanos 2:17-29</p>
                     <p className="text-sm">Los judíos son CULPABLES</p>
                   </div>
                 </div>
