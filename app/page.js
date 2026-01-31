@@ -21,6 +21,7 @@ import TeleiosComprehensive from './components/diagrams/visual-teleios-comprehen
 import EzekielDiagram from './components/diagrams/visual-ezekiel18-diagram';
 import CuandoPerfeccionDiagram from './components/diagrams/visual-cuando-perfeccion';
 import ConsumadoEsDiagram from './components/diagrams/visual-consumado-es';
+import Mediador144000Diagram from './components/diagrams/visual-144000-mediador';
 
 const JusticiaPorFeIntegrated = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -169,6 +170,16 @@ const JusticiaPorFeIntegrated = () => {
     component: ConsumadoEsDiagram,
     color: 'from-teal-500 to-teal-700',
     textColor: 'text-teal-600'
+  },
+  {
+    id: '144000-mediador',
+    title: 'Por Qué los 144,000 No Necesitarán un Mediador',
+    description: 'Justificación definitiva vs. perfección sin pecado: La respuesta centrada en el Evangelio al período sin Mediador',
+    category: 'Escatología',
+    icon: <Users size={24} />,
+    component: Mediador144000Diagram,
+    color: 'from-purple-500 to-blue-700',
+    textColor: 'text-purple-600'
   }
   ];
 
