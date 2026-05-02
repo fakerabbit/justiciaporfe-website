@@ -18,36 +18,28 @@ const SubscribeSection = () => {
 
     const handleSubscribe = async () => {
         if (!email) return;
-        
+
+        setIsSubmitting(true);
         try {
-            const CONVERTKIT_FORM_ID = process.env.NEXT_PUBLIC_CONVERTKIT_FORM_ID;
-            const CONVERTKIT_API_KEY = process.env.NEXT_PUBLIC_CONVERTKIT_API_KEY;
-            
-            const response = await fetch(`https://api.convertkit.com/v3/forms/${CONVERTKIT_FORM_ID}/subscribe`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                api_secret: CONVERTKIT_API_KEY,
-                email: email,
-            }),
+            const response = await fetch('https://app.kit.com/forms/b0babeea08/subscriptions', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({ email_address: email }),
             });
 
             if (response.ok) {
-            // Clear email first
-            setEmail('');
-            // Then update subscribed state
-            // Use callback form to ensure we're working with latest state
-            setSubscribed(true);
+                setEmail('');
+                setSubscribed(true);
             } else {
-            const data = await response.json();
-            console.error('ConvertKit error:', data);
-            alert('Hubo un error. Por favor intenta de nuevo.');
+                const data = await response.json();
+                console.error('Kit error:', data);
+                alert('Hubo un error. Por favor intenta de nuevo.');
             }
         } catch (error) {
             console.error('Error subscribing:', error);
             alert('Hubo un error. Por favor intenta de nuevo.');
+        } finally {
+            setIsSubmitting(false);
         }
     };
 
