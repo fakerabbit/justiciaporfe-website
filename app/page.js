@@ -22,6 +22,7 @@ import EzekielDiagram from './components/diagrams/visual-ezekiel18-diagram';
 import CuandoPerfeccionDiagram from './components/diagrams/visual-cuando-perfeccion';
 import ConsumadoEsDiagram from './components/diagrams/visual-consumado-es';
 import Mediador144000Diagram from './components/diagrams/visual-144000-mediador';
+import Salmo127Reformadores from './components/diagrams/visual-salmo127-reformadores';
 
 const JusticiaPorFeIntegrated = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -180,6 +181,16 @@ const JusticiaPorFeIntegrated = () => {
     component: Mediador144000Diagram,
     color: 'from-purple-500 to-blue-700',
     textColor: 'text-purple-600'
+  },
+  {
+    id: 'salmo127-reformadores',
+    title: 'Salmo 127:2 y la Reforma Protestante',
+    description: 'El pan de la angustia vs. el don al amado: cómo Lutero, Calvino, Spurgeon y Owen leyeron este salmo',
+    category: 'Reforma Protestante',
+    icon: <BookOpen size={24} />,
+    component: Salmo127Reformadores,
+    color: 'from-amber-600 to-amber-900',
+    textColor: 'text-amber-700'
   }
   ];
 
