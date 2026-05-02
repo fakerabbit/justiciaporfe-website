@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import PDFExportButton from '../PDFExportButton';
 
 const Salmo127Reformadores = () => {
   const reformadores = [
@@ -89,7 +92,7 @@ const Salmo127Reformadores = () => {
   ];
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-6">
+    <div id="visual-salmo127-reformadores" className="w-full max-w-6xl mx-auto p-6">
       <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
 
         {/* Header */}
@@ -272,6 +275,14 @@ const Salmo127Reformadores = () => {
             justiciaporfe.com · Salmo 127:2 y la Reforma Protestante
           </p>
         </div>
+      </div>
+
+      {/* PDF Export Button */}
+      <div className="mt-12 flex justify-center">
+        <PDFExportButton
+          elementId="visual-salmo127-reformadores"
+          filename="salmo127-reformadores-diagrama.pdf"
+        />
       </div>
     </div>
   );
