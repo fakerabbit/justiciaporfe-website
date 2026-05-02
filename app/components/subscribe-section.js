@@ -21,17 +21,18 @@ const SubscribeSection = () => {
 
         setIsSubmitting(true);
         try {
-            const response = await fetch('https://app.kit.com/forms/b0babeea08/subscriptions', {
+            const response = await fetch('/api/subscribe', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams({ email_address: email }),
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email }),
             });
+
+            const data = await response.json();
 
             if (response.ok) {
                 setEmail('');
                 setSubscribed(true);
             } else {
-                const data = await response.json();
                 console.error('Kit error:', data);
                 alert('Hubo un error. Por favor intenta de nuevo.');
             }
